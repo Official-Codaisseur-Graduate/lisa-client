@@ -1,14 +1,17 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
+import { getAllTypes } from '../../actions/types'
+
+import TypeForm from './TypeForm'
 
 
-export class TypeForm extends Component {
+export class TypeFormContainer extends Component {
   state = {
     typeName: ''
   }
 
   componentDidMount = () => {
-    this.props.getTypes()
+    this.props.getAllTypes()
   }
 
   onChange = (event) => {
@@ -26,14 +29,11 @@ export class TypeForm extends Component {
   }
   
   render () {
-    const { onChange, onSubmit, props, state } = this
-    const { types } = props
-    const { type, typeName } = state
+    const { onChange, onSubmit, state } = this
+    const { typeName } = state
     return (
       <div className="TypeForm">
         <TypeForm 
-          types={types}
-          type={type}
           typeName={typeName}
           onChange={onChange}
           onSubmit={onSubmit}
@@ -50,8 +50,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getTypes: dispatch => getTypes()
+    getAllTypes: dispatch => getAllTypes()
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(DishForm)
+export default connect(mapStateToProps, mapDispatchToProps)(TypeFormContainer)

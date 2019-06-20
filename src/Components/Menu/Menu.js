@@ -1,10 +1,9 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import '../App/App.css';
 
 // import DateForm from '../DateForm'
-import DishForm from '../DishForm'
-// import TypeForm from '../TypeForm'
+// import DishForm from '../DishForm'
+import TypeForm from '../TypeForm'
 // import MenuForm from './MenuForm'
 
 function Menu() {
@@ -12,8 +11,8 @@ function Menu() {
     <div className="Menu">
       <div className="sideBar">
         {/* <DateForm /> */}
-        <DishForm />
-        {/* <TypeForm /> */}
+        {/* <DishForm /> */}
+        <TypeForm />
       </div>
       {/* <MenuForm /> */}
     </div>

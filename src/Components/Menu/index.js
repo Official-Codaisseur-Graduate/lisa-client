@@ -1,17 +1,17 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 
+import Menu from './Menu'
 
-export class Menu extends Component {
+
+export class MenuContainer extends Component {
   componentDidMount () {
 
   }
   
   render () {
     return (
-      <div className="Menu">
-
-      </div>
+      <Menu /> 
     )
   }
 }
