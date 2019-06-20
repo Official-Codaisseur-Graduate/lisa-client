@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 // import DateForm from '../DateForm'
-// import DishForm from '../DishForm'
+import DishForm from '../DishForm'
 // import TypeForm from '../TypeForm'
 // import MenuForm from './MenuForm'
 
@@ -12,7 +12,7 @@ function Menu() {
     <div className="Menu">
       <div className="sideBar">
         {/* <DateForm /> */}
-        {/* <DishForm /> */}
+        <DishForm />
         {/* <TypeForm /> */}
       </div>
       {/* <MenuForm /> */}
