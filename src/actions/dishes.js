@@ -12,6 +12,7 @@ export const getDishes = () => (dispatch, getState) => {
   if (getState().dishes) return;
   request(`${baseUrl}/dishes`)
     .then(result => {
+      console.log('RESULT?! ', result)
       dispatch(dishesFetched(result.body));
     })
     .catch(console.error);
@@ -37,12 +38,13 @@ const dishFetched = dish => ({
 })
 
 // add a dish of a type
-export const addDish = (typeId, dishName) => dispatch => {
-  const data = { typeId, dishName };
+export const createDish = (dish) => dispatch => {
+  console.log('DISH', dish)
   request
     .post(`${baseUrl}/dishes`)
-    .send(data)
+    .send({dish})
     .then(res => {
+      console.log(res)
       dispatch(addDishSuccess(res.body));
     })
     .catch(err => {

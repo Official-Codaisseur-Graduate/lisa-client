@@ -1,41 +1,48 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
+import { getTypes } from '../../actions/types'
+import { createDish } from '../../actions/dishes'
 
+import DishForm from './DishForm'
 
-export class DishForm extends Component {
+export class DishFormContainer extends Component {
   state = {
-    type: '',
+    typeId: '',
     dishName: ''
   }
 
   componentDidMount = () => {
-    // this.props.getDishes()
+    this.props.getTypes()
   }
 
   onChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value
     })
+    console.log(this.state)
   }
 
   onSubmit = (event) => {
     event.preventDefault()
-    this.props.createDish(this.state)
+    console.log(this.state)
+    const { typeId, dishName } = this.state
+    const dish = { typeId, dishName }
+    this.props.createDish(dish)
     this.setState({
-      type: '',
-      name: ''
+      typeId: "",
+      dishName: ""
     })
   }
   
   render () {
     const { onChange, onSubmit, props, state } = this
     const { types } = props
-    const { type, dishName } = state
+    const { typeId, dishName } = state
     return (
       <div className="DishForm">
         <DishForm 
           types={types}
-          type={type}
+          type={typeId}
           dishName={dishName}
           onChange={onChange}
           onSubmit={onSubmit}
@@ -51,10 +58,5 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    getDishes: dispatch => getDishes()
-  }
-}
 
-export default connect(mapStateToProps, mapDispatchToProps)(DishForm)
+export default connect(mapStateToProps, { getTypes, createDish })(DishFormContainer)
