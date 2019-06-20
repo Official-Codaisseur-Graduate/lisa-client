@@ -37,12 +37,13 @@ export const getAllTypes = () => (dispatch, getState) => {
 }
 
 //create new type
-const createTypeSuccess = type => ({
+const createTypeSuccess = dishtype => ({
     type: CREATE_TYPE_SUCCESS,
-    type
+    dishtype
 })
 
 export const createType = (data) => (dispatch) => {
+    console.log('data', data)
     request
         .post(`${baseUrl}/types`)
         .send(data)

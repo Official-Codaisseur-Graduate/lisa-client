@@ -9,7 +9,7 @@ export class DishForm extends Component {
   }
 
   componentDidMount = () => {
-    this.props.getDishes()
+    // this.props.getDishes()
   }
 
   onChange = (event) => {
