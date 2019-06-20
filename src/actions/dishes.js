@@ -8,7 +8,7 @@ export const DISH_DELETE_SUCCESS = "DISH_DELETE_SUCCESS"
 export const DISH_FETCHED = "DISH_FETCHED"
 
 //loads dishes based on an event
-export const loadDishes = () => (dispatch, getState) => {
+export const getDishes = () => (dispatch, getState) => {
   if (getState().dishes) return;
   request(`${baseUrl}/dishes`)
     .then(result => {
