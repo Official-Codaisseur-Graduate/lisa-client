@@ -1,19 +1,14 @@
 import React from 'react'
 
-function DishForm(props) {
-  const { type, dishName, types, onChange, onSubmit } = props
-  const typeOptions = types.map(type => {
-    const { name, id } = type
-    return (
-      <option key={id}>{name}</option>
-    )
-  })
+function TypeForm(props) {
+  const { typeName, onChange, onSubmit } = props
+
   return (
-    <div className="DishForm">
+    <div className="TypeForm">
       <form onSubmit={onSubmit}> 
         <label>
           Naam type:
-          <input type="text" onChange={onChange} name={dishName} />
+          <input type="text" onChange={onChange} name={typeName} />
         </label>
         <input type="submit" value="Voeg type toe" />
       </form>  
@@ -21,4 +16,4 @@ function DishForm(props) {
   );
 }
 
-export default DishForm
+export default TypeForm
