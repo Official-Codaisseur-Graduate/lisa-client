@@ -1,11 +1,10 @@
 import request from 'superagent'
+import { baseUrl } from "../constants";
 export const TYPE_FETCHED = 'TYPE_FETCHED'
 export const TYPES_FETCHED = 'TYPES_FETCHED'
 export const CREATE_TYPE_SUCCESS = 'CREATE_TYPE_SUCCESS'
 export const TYPE_DELETE_SUCCESS = 'TYPE_DELETE_SUCCESS'
 export const TYPE_UPDATE_SUCCESS = 'TYPE_UPDATE_SUCCESS'
-
-const baseUrl = 'http://localhost:4000'
 
 //get one type
 const typeFetched = type => ({
