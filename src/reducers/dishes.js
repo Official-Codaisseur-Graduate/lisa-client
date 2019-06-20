@@ -5,7 +5,7 @@ export default function (state = null, action) {
     case DISHES_FETCHED:
       return action.dishes;
     case ADD_DISH_SUCCESS:
-      return [...state, action.dishtype];
+      return state 
     case DISH_DELETE_SUCCESS:
         return state.filter(dish => dish.id !== action.id)
     default:
