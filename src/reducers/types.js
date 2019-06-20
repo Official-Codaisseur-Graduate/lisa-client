@@ -1,4 +1,4 @@
-import { TYPES_FETCHED, CREATE_TYPE_SUCCESS } from '../actions/types'
+import { TYPES_FETCHED, CREATE_TYPE_SUCCESS, TYPE_DELETE_SUCCESS } from '../actions/types'
 
 const reducer = (state = null, action = {}) => {
     switch (action.type) {
@@ -6,6 +6,8 @@ const reducer = (state = null, action = {}) => {
             return action.types;
         case CREATE_TYPE_SUCCESS:
             return [...state, action.type];
+        case TYPE_DELETE_SUCCESS:
+            return state.filter(type => type.id !== action.id)
         default:
             return state;
     }

@@ -2,6 +2,8 @@ import request from 'superagent'
 export const TYPE_FETCHED = 'TYPE_FETCHED'
 export const TYPES_FETCHED = 'TYPES_FETCHED'
 export const CREATE_TYPE_SUCCESS = 'CREATE_TYPE_SUCCESS'
+export const TYPE_DELETE_SUCCESS = 'TYPE_DELETE_SUCCESS'
+export const TYPE_UPDATE_SUCCESS = 'TYPE_UPDATE_SUCCESS'
 
 const baseUrl = 'http://localhost:4000'
 
@@ -47,6 +49,36 @@ export const createType = (data) => (dispatch) => {
         .send(data)
         .then(response => {
             dispatch(createTypeSuccess(response.body))
+        })
+        .catch(console.error)
+}
+
+// delete type
+const typeDeleteSuccess = id => ({
+    type: TYPE_DELETE_SUCCESS,
+    id
+})
+
+export const deleteType = (id) => (dispatch) => {
+    request
+        .delete(`${baseUrl}/types/${id}`)
+        .then( dispatch(typeDeleteSuccess(id))
+        )
+        .catch(console.error)
+}
+
+//update type
+const typeUpdateSuccess = type => ({
+    type: TYPE_UPDATE_SUCCESS,
+    type
+})
+
+export const updateType = (id, data) => (dispatch) => {
+    request
+        .put(`${baseUrl}/types/${id}`)
+        .send(data)
+        .then(response => {
+            dispatch(typeUpdateSuccess(response.body))
         })
         .catch(console.error)
 }
