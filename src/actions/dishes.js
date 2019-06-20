@@ -20,8 +20,8 @@ const dishesFetched = dishes => ({
 });
 
 // add a dish of a type
-export const addDish = (typeId) => dispatch => {
-  const data = { typeId };
+export const addDish = (typeId, dishName) => dispatch => {
+  const data = { typeId, dishName };
   request
     .post(`${baseUrl}/dishes`)
     .send(data)
