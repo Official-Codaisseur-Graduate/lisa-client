@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
-import { getAllTypes } from '../../actions/types'
-
+import { getAllTypes, createType } from '../../actions/types'
 import TypeForm from './TypeForm'
 
 
 export class TypeFormContainer extends Component {
   state = {
-    typeName: ''
+    name: ''
   }
 
   componentDidMount = () => {
@@ -15,6 +14,7 @@ export class TypeFormContainer extends Component {
   }
 
   onChange = (event) => {
+    console.log('event', this.state.name)
     this.setState({
       [event.target.name]: event.target.value
     })
@@ -22,19 +22,20 @@ export class TypeFormContainer extends Component {
 
   onSubmit = (event) => {
     event.preventDefault()
+    console.log('typeName', this.state.name);
     this.props.createType(this.state)
     this.setState({
-      typeName: ''
+      name: ''
     })
   }
   
   render () {
-    const { onChange, onSubmit, state } = this
-    const { typeName } = state
+    const { onChange, onSubmit} = this
+    const { name } = this.state
     return (
       <div className="TypeForm">
         <TypeForm 
-          typeName={typeName}
+          name={name}
           onChange={onChange}
           onSubmit={onSubmit}
         />
@@ -48,10 +49,12 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    getAllTypes: dispatch => getAllTypes()
-  }
-}
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     getAllTypes: dispatch => getAllTypes(),
+//     createType: createType
+    
+//   }
+// }
 
-export default connect(mapStateToProps, mapDispatchToProps)(TypeFormContainer)
+export default connect(mapStateToProps, {getAllTypes, createType})(TypeFormContainer)
