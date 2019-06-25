@@ -22,7 +22,7 @@ function DishForm(props) {
         <label>
           Naam gerecht:
           <br />
-          <input className="dishFormName" type="text" onChange={onChange} value={dishName} name="dishName" />
+          <input className="dishFormName" type="text" onChange={onChange} required={true} value={dishName} name="dishName" />
         </label>
         <br />
         <input type="submit" value="Voeg gerecht toe" />

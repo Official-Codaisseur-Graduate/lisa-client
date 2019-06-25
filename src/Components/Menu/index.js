@@ -14,7 +14,6 @@ export class MenuContainer extends Component {
 
   changeDate = (currentDate) => {
     const date = moment(currentDate).format("YYYY-MM-DD")
-    console.log(date)
     // Set date in Redux Store
     this.props.setDate(date)
 

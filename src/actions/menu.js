@@ -25,16 +25,12 @@ export const getDayMenu = date => dispatch => {
 
 export const addMenuItem = dish => dispatch => {
   console.log("ADD TO MENU: ", dish)
-  if (!dish.type_name) {
-    alert('Selecteer eerst een type en gerecht.')
-  } else if (!dish.dish_name) {
-    alert('Selecteer eerst een gerecht.')
-  } else {
-    request
-      .post(`${baseUrl}/menus`)
-      .send({dish})
-      .then(res => {
-        console.log(res.body)
+  request
+    .post(`${baseUrl}/menus`)
+    .send({dish})
+    .then(res => {
+      console.log(res.body)
+      dispatch(getDayMenu(dish.date))
     })
   }
 }

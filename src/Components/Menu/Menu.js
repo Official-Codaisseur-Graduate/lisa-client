@@ -9,7 +9,6 @@ import MenuDisplay from '../MenuDisplay'
 
 function Menu(props) {
   const { changeDate } = props
-  console.log('PROPS', props)
   return (
     <div className="Menu">
       <div className="menuBar">

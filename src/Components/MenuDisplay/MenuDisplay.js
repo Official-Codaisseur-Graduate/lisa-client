@@ -2,7 +2,7 @@ import React from 'react'
 
 
 function MenuDisplay(props) {
-  const { menu } = props
+  const { menu, date } = props
   const groupedMenuItems = menu && menu.reduce((groupedMenuItems, currentItem) => {
     if (!groupedMenuItems[currentItem.type_name]) {
       groupedMenuItems = {...groupedMenuItems, [currentItem.type_name]: []}

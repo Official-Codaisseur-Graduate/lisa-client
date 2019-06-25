@@ -10,7 +10,7 @@ import React from 'react'
 // }
 
 function DishPicker(props) {
-  const { dishes, types, onChangeType, onChange, onSubmit } = props
+  const { dishes, types, onChangeType, onChange, onSubmit, dishName } = props
   console.log("WHAT IS ONCHANGE?!", onChange)
   const typeOptions = types && types.map(type => {
     const { name, id } = type
@@ -45,8 +45,8 @@ function DishPicker(props) {
         <label>
           Gerecht:
           <br />
-          <select className="dishPickerName" defaultValue="" name="dishName" onChange={onChange}> 
-            <option value="">Kies een gerecht</option>            
+          <select className="dishPickerName" name="dishName" required={true} onChange={onChange} value={dishName}> 
+            <option value="" defaultValue="">Kies een gerecht</option>            
             {dishOptions}
           </select>
         </label>
