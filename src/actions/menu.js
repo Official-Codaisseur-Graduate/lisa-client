@@ -32,5 +32,4 @@ export const addMenuItem = dish => dispatch => {
       console.log(res.body)
       dispatch(getDayMenu(dish.date))
     })
-  }
 }
