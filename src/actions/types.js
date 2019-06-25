@@ -42,13 +42,14 @@ const createTypeSuccess = dishType => ({
     dishType
 })
 
-export const createType = (data) => (dispatch) => {
-    console.log('data', data)
+export const createType = (type) => (dispatch) => {
+    console.log('type', type)
     request
         .post(`${baseUrl}/types`)
-        .send(data)
-        .then(response => {
-            dispatch(createTypeSuccess(response.body))
+        .send({type})
+        .then(res => {
+            console.log(res)
+            dispatch(createTypeSuccess(res.body))
         })
         .catch(console.error)
 }

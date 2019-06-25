@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import { getTypes } from '../../actions/types'
 import { createDish } from '../../actions/dishes'
-
+ 
 import DishForm from './DishForm'
 
 export class DishFormContainer extends Component {
@@ -59,4 +59,9 @@ const mapStateToProps = state => {
 }
 
 
-export default connect(mapStateToProps, { getTypes, createDish })(DishFormContainer)
+export default connect(
+  mapStateToProps, 
+  { 
+    getTypes, 
+    createDish 
+  })(DishFormContainer)
