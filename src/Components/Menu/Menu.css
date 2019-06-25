@@ -1,0 +1,85 @@
+.menuBar {
+  height: 10vh;
+  width: 100%;
+  margin: 0;
+  background-color: darkslateblue;
+}
+
+  .appHeader {
+    margin: auto;
+    padding-top: 2vh;
+    color: white;
+  }
+
+.sideBar {
+  height: 90vh;
+  width: 40vh;
+  background-color: lightgrey;
+}
+
+  .Calendar {
+    width: 36vh; 
+    margin: 0 2vh 2vh 2vh;
+    padding-top: 2vh;
+  }
+  
+  .menuEditor {
+    display: flex;
+  }
+  
+    .MenuDisplay {
+      margin: auto
+    }
+
+  .DishForm,
+  .DishPicker {
+    width: 36vh;
+    margin: 1vh 2vh 2vh 2vh;
+    display: flex;
+    flex-direction: column;
+  }
+    
+  .DishPicker {
+    height: 15.5vh
+  }
+
+  .DishForm {
+    padding-top: 2vh;
+    height: 18vh;
+    background-color: white;
+  }
+
+    .dishPickerType,
+    .dishPickerName,
+    .dishFormType,
+    .dishFormName,
+    .typeFormName {
+      margin: 1vh auto;
+      width: 30vh;
+      height: 2.5vh;
+    }
+  
+
+  .TypeForm {
+    height: 12vh;
+    width: 36vh;
+    margin: 2vh auto;
+    padding-top: 2vh;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+
+  }
+
+label {
+  margin: 1vh auto;
+  font-size: 2vh;
+}
+
+select {
+  height: 2.5vh;
+  font-size: 2vh;
+  line-height: 3vh;
+  /* padding: 1vh;
+  background-color: red; */
+}
