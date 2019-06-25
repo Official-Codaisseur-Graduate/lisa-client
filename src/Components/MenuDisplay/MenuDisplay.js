@@ -2,7 +2,7 @@ import React from 'react'
 
 
 function MenuDisplay(props) {
-  const { menu } = props
+  const { menu, date } = props
   const groupedMenuItems = menu && menu.reduce((groupedMenuItems, currentItem) => {
     if (!groupedMenuItems[currentItem.type_name]) {
       groupedMenuItems = {...groupedMenuItems, [currentItem.type_name]: []}
@@ -26,16 +26,15 @@ function MenuDisplay(props) {
       </div>
     )
   })
-  console.log(menuItemsByType)
   // const menuItems = menu && menu.map(menuItem => {
   //   const { id, dish_name, type_name } = menuItem
   //   return <p key={id}>{type_name}: {dish_name}</p>
   // })
   return (
     <div>
-      {/* {menuItems ? menuItems : "Loading..." } */}
-      {menuItemsByType ? menuItemsByType : "Loading..." }
-      {/* {console.log("????", menuItemsByType)} */}
+      {
+      menuItemsByType ? menuItemsByType 
+      : "Loading..." }
     </div>
   );
 }

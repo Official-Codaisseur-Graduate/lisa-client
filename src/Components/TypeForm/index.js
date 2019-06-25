@@ -13,7 +13,6 @@ export class TypeFormContainer extends Component {
   }
 
   onChange = (event) => {
-    console.log('event', this.state.name)
     this.setState({
       [event.target.name]: event.target.value
     })
@@ -21,7 +20,6 @@ export class TypeFormContainer extends Component {
 
   onSubmit = async (event) => {
     event.preventDefault()
-    console.log('typeName', this.state.name);
     await this.props.createType(this.state)
     this.props.getTypes()
     this.setState({
