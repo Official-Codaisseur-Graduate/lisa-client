@@ -23,7 +23,13 @@
     padding-top: 2vh;
   }
   
-
+  .menuEditor {
+    display: flex;
+  }
+  
+    .MenuDisplay {
+      margin: auto
+    }
 
   .DishForm,
   .DishPicker {

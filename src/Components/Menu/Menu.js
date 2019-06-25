@@ -5,7 +5,7 @@ import Calendar from 'react-calendar'
 import DishPicker from '../DishPicker'
 import DishForm from '../DishForm'
 import TypeForm from '../TypeForm'
-// import MenuForm from './MenuForm'
+import MenuDisplay from '../MenuDisplay'
 
 function Menu(props) {
   const { changeDate } = props
@@ -15,6 +15,7 @@ function Menu(props) {
       <div className="menuBar">
         <h1 className="appHeader">Vitalis Menu Editor</h1>
       </div>
+      <div className="menuEditor">
       <div className="sideBar">
         <div className="Calendar">
           <Calendar 
@@ -26,7 +27,9 @@ function Menu(props) {
         <DishForm />
         <TypeForm />
       </div>
-      {/* <MenuForm /> */}
+      <MenuDisplay />
+      </div>
+      
     </div>
   );
 }

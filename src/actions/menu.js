@@ -17,9 +17,9 @@ export const getDayMenu = date => dispatch => {
     .get(`${baseUrl}/menus/?date=${date}`)
     .send(date)
     .then(res => {
-      console.log(res.body)
+      console.log("RESPONSE: ", res.body)
       const { menu } = res.body
-      setDayMenu(menu)
+      dispatch(setDayMenu(res.body))
     })
 }
 
