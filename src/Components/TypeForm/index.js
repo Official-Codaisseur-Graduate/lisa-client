@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
-import { createType } from '../../actions/types'
+import { createType, getTypes } from '../../actions/types'
 import TypeForm from './TypeForm'
 
 
@@ -19,13 +19,15 @@ export class TypeFormContainer extends Component {
     })
   }
 
-  onSubmit = (event) => {
+  onSubmit = async (event) => {
     event.preventDefault()
     console.log('typeName', this.state.name);
-    this.props.createType(this.state)
+    await this.props.createType(this.state)
+    this.props.getTypes()
     this.setState({
       name: ''
     })
+   
   }
   
   render () {
@@ -52,5 +54,5 @@ const mapStateToProps = state => {
 export default connect(
   mapStateToProps,
   { 
-    createType
+    createType, getTypes
   })(TypeFormContainer)
