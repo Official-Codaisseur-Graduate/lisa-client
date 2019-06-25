@@ -26,7 +26,6 @@ export class MenuContainer extends Component {
     return (
       <Menu
         changeDate={this.changeDate}
-
       /> 
     )
   }
