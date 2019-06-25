@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import DishPicker from './DishPicker'
 
 import { getDishes } from '../../actions/dishes'
+import { addMenuItem } from '../../actions/menu'
 
 
 export class DishPickerContainer extends Component {
@@ -16,25 +17,35 @@ export class DishPickerContainer extends Component {
 
   }
 
-  onChangeType = (event) => {
-    // event.preventDefault()
-    console.log("DISHPICKER ONCHANGE EVENT", event)
+  onChangeType = id => {
     const { types } = this.props
-    const id = event.target.value
+    const selectedType = types.find(type => type.id == id)
     this.setState({
-      [event.target.name]: types.find(type => type.id === event.target.value).name
+      "typeName": selectedType.name
     })
     this.props.getDishes(id)
-      
   }
 
+  onChange = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+  }
 
   onSubmit = (event) => {
     event.preventDefault()
-    console.log(this.state)
-    const { typeId, dishName } = this.state
-    const dish = { typeId, dishName }
-    this.props.createDish(dish)
+    event.stopPropagation();
+    event.nativeEvent.stopImmediatePropagation()
+    console.log("ONSUBMIT STATE", this.state)
+    console.log("ONSUBMIT EVENT", event)
+    const { date } = this.props
+    const { typeName, dishName } = this.state
+    const dish = { 
+      type_name: typeName, 
+      dish_name: dishName,
+      date
+    }
+    this.props.addMenuItem(dish)
     this.setState({
       typeName: "",
       dishName: ""
@@ -42,13 +53,15 @@ export class DishPickerContainer extends Component {
   }
   
   render () {
-    const { date, types } = this.props
-    console.log("ONCHANGETYPE RENDER", this.onChangeType)
+    const { date, types, dishes } = this.props
     return (
       <DishPicker 
         date={date}
         types={types}
+        dishes={dishes}
+        onChange={this.onChange}
         onChangeType={this.onChangeType}
+        onSubmit={this.onSubmit}
       />
     )
   }
@@ -65,5 +78,6 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps, {
-  getDishes
+  getDishes,
+  addMenuItem
 })(DishPickerContainer)

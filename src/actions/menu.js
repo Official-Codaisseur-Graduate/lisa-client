@@ -23,3 +23,12 @@ export const getDayMenu = date => dispatch => {
     })
 }
 
+export const addMenuItem = dish => dispatch => {
+  console.log("ADD TO MENU: ", dish)
+  request
+    .post(`${baseUrl}/menus`)
+    .send({dish})
+    .then(res => {
+      console.log(res.body)
+    })
+}

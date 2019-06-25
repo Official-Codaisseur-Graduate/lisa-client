@@ -11,7 +11,6 @@ import {
 //loads dishes based on an event
 export const getDishes = (type) => (dispatch, getState) => {
   console.log("DISH GET REQ TYPE", type)
-  if (getState().dishes) return;
   request(`${baseUrl}/dishes?type=${type}`)
     .then(result => {
       console.log('RESULT?! ', result)
