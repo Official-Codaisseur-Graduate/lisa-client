@@ -1,7 +1,7 @@
 import React from 'react'
 
 function DishForm(props) {
-  const { types, onChange, onSubmit } = props
+  const { types, onChange, onSubmit, dishName } = props
   const typeOptions = types && types.map(type => {
     const { name, id } = type
     return (
@@ -22,7 +22,7 @@ function DishForm(props) {
         <label>
           Naam gerecht:
           <br />
-          <input className="dishFormName" type="text" onChange={onChange} name="dishName" />
+          <input className="dishFormName" type="text" onChange={onChange} value={dishName} name="dishName" />
         </label>
         <br />
         <input type="submit" value="Voeg gerecht toe" />
