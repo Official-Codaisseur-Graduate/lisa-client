@@ -15,7 +15,10 @@ function MenuDisplay(props) {
     const menuItems = groupedMenuItems[type].map(menuItem => {
       const { dish_name, id } = menuItem
       return (
-        <p key={id}>{menuItem.dish_name}</p>
+        <div className="menuItem" key={id}>
+          <p key={id}>{dish_name}</p>
+          <button style={{color: 'red'}}>X</button>
+        </div>
       )
     })
 
@@ -26,16 +29,9 @@ function MenuDisplay(props) {
       </div>
     )
   })
-  console.log(menuItemsByType)
-  // const menuItems = menu && menu.map(menuItem => {
-  //   const { id, dish_name, type_name } = menuItem
-  //   return <p key={id}>{type_name}: {dish_name}</p>
-  // })
   return (
     <div>
-      {/* {menuItems ? menuItems : "Loading..." } */}
       {menuItemsByType ? menuItemsByType : "Loading..." }
-      {/* {console.log("????", menuItemsByType)} */}
     </div>
   );
 }

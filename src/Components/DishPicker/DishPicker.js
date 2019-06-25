@@ -45,8 +45,8 @@ function DishPicker(props) {
         <label>
           Gerecht:
           <br />
-          <select className="dishPickerName" name="dishName" onChange={onChange}> 
-            <option value="" defaultValue="">Kies een gerecht</option>            
+          <select className="dishPickerName" defaultValue="" name="dishName" onChange={onChange}> 
+            <option value="">Kies een gerecht</option>            
             {dishOptions}
           </select>
         </label>
