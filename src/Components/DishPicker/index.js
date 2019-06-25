@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 import DishPicker from './DishPicker'
 
 import { getDishes } from '../../actions/dishes'
-import { addMenuItem } from '../../actions/menu'
+import { addMenuItem, getDayMenu } from '../../actions/menu'
 
 
 export class DishPickerContainer extends Component {
@@ -48,6 +48,11 @@ export class DishPickerContainer extends Component {
       typeName: "",
       dishName: ""
     })
+    setTimeout(this.updateDisplay(date), 2000)
+  }
+
+  updateDisplay = date => {
+    this.props.getDayMenu(date)  
   }
   
   render () {
@@ -78,5 +83,6 @@ const mapStateToProps = state => {
 export default connect(
   mapStateToProps, {
   getDishes,
-  addMenuItem
+  addMenuItem,
+  getDayMenu
 })(DishPickerContainer)

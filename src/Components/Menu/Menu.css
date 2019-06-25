@@ -31,6 +31,14 @@
       margin: auto
     }
 
+      .menuItem p {
+        margin: 0 auto;
+      }
+      .menuItem {
+        margin: 0 auto;
+        display: flex
+      }
+
   .DishForm,
   .DishPicker {
     width: 36vh;
