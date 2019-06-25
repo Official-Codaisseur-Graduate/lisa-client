@@ -34,8 +34,6 @@ export class DishPickerContainer extends Component {
 
   onSubmit = (event) => {
     event.preventDefault()
-    event.stopPropagation();
-    event.nativeEvent.stopImmediatePropagation()
     console.log("ONSUBMIT STATE", this.state)
     console.log("ONSUBMIT EVENT", event)
     const { date } = this.props
@@ -62,6 +60,7 @@ export class DishPickerContainer extends Component {
         onChange={this.onChange}
         onChangeType={this.onChangeType}
         onSubmit={this.onSubmit}
+        dishName={this.state.dishName}
       />
     )
   }
