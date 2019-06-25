@@ -1,4 +1,7 @@
-import { DISHES_FETCHED, ADD_DISH_SUCCESS, DISH_DELETE_SUCCESS } from '../actions/dishes'
+import { 
+  DISHES_FETCHED, 
+  ADD_DISH_SUCCESS, 
+  DISH_DELETE_SUCCESS } from '../actions'
 
 export default function (state = null, action) {
   switch(action.type) {

@@ -1,11 +1,11 @@
 import { 
-  SET_DAY_MENU 
+  SET_DATE 
 } from '../actions/'
 
 const reducer = (state = null, action = {}) => {
     switch (action.type) {
-        case SET_DAY_MENU:
-          return action.menu
+        case SET_DATE:
+          return action.date
         default:
             return state;
     }

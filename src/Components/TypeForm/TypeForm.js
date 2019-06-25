@@ -4,12 +4,14 @@ function TypeForm(props) {
   const { name, onChange, onSubmit } = props
 
   return (
-    <div className="TypeForm">
+    <div>
       <form onSubmit={onSubmit}> 
         <label>
           Naam type:
-          <input type="text" value={name} onChange={onChange} name='name' />
+          <br />
+          <input className="typeFormName" type="text" value={name} onChange={onChange} name='name' />
         </label>
+        <br />
         <input type="submit" value="Voeg type toe" />
       </form>  
     </div>

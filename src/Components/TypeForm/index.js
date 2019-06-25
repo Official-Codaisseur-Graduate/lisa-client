@@ -48,10 +48,9 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    createType: createType
-  }
-}
 
-export default connect(mapStateToProps, mapDispatchToProps )(TypeFormContainer)
+export default connect(
+  mapStateToProps,
+  { 
+    createType
+  })(TypeFormContainer)

@@ -9,18 +9,22 @@ function DishForm(props) {
     )
   })
   return (
-    <div className="DishForm">
+    <div>
       <form onSubmit={onSubmit}> 
         <label>
           Type gerecht:
-          <select name="typeId" onChange={onChange}> 
+          <br />
+          <select className="dishFormType" name="typeName" onChange={onChange}> 
           <option value="" defaultValue="">Kies een type</option>            {typeOptions}
           </select>
         </label>
+        <br />
         <label>
           Naam gerecht:
-          <input type="text" onChange={onChange} name="dishName" />
+          <br />
+          <input className="dishFormName" type="text" onChange={onChange} name="dishName" />
         </label>
+        <br />
         <input type="submit" value="Voeg gerecht toe" />
       </form>  
     </div>

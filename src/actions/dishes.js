@@ -1,16 +1,18 @@
 import * as request from "superagent";
 import { baseUrl } from "../constants";
-
-export const DISHES_FETCHED = "DISHES_FETCHED";
-export const ADD_DISH_SUCCESS = "ADD_DISH_SUCCESS"
-export const DISH_UPDATE_SUCCESS = "DISH_UPDATE_SUCCESS"
-export const DISH_DELETE_SUCCESS = "DISH_DELETE_SUCCESS"
-export const DISH_FETCHED = "DISH_FETCHED"
+import { 
+  DISHES_FETCHED,
+  ADD_DISH_SUCCESS,
+  DISH_UPDATE_SUCCESS,
+  DISH_DELETE_SUCCESS,
+  DISH_FETCHED 
+} from './'
 
 //loads dishes based on an event
-export const getDishes = () => (dispatch, getState) => {
+export const getDishes = (type) => (dispatch, getState) => {
+  console.log("DISH GET REQ TYPE", type)
   if (getState().dishes) return;
-  request(`${baseUrl}/dishes`)
+  request(`${baseUrl}/dishes?type=${type}`)
     .then(result => {
       console.log('RESULT?! ', result)
       dispatch(dishesFetched(result.body));
@@ -38,7 +40,7 @@ const dishFetched = dish => ({
 })
 
 // add a dish of a type
-export const createDish = (dish) => dispatch => {
+export const createDish = dish => dispatch => {
   console.log('DISH', dish)
   request
     .post(`${baseUrl}/dishes`)
