@@ -27,7 +27,7 @@ function DishPicker(props) {
   return (
     <div className="DishPicker">
       <form onSubmit={onSubmit}> 
-        <label onClick={onChangeType}>
+        <label>
           Type gerecht:
           <br />
           <select className="dishPickerType" name="typeName" onChange={(e) => onChangeType(e)}> 

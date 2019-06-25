@@ -14,7 +14,7 @@ function DishForm(props) {
         <label>
           Type gerecht:
           <br />
-          <select className="dishFormType" name="typeName" onChange={onChange}> 
+          <select className="dishFormType" name="typeId" onChange={onChange}> 
           <option value="" defaultValue="">Kies een type</option>            {typeOptions}
           </select>
         </label>
