@@ -10,10 +10,8 @@ import {
 
 //loads dishes based on an event
 export const getDishes = (type) => (dispatch, getState) => {
-  console.log("DISH GET REQ TYPE", type)
   request(`${baseUrl}/dishes?type=${type}`)
     .then(result => {
-      console.log('RESULT?! ', result)
       dispatch(dishesFetched(result.body));
     })
     .catch(console.error);
@@ -40,12 +38,10 @@ const dishFetched = dish => ({
 
 // add a dish of a type
 export const createDish = dish => dispatch => {
-  console.log('DISH', dish)
   request
     .post(`${baseUrl}/dishes`)
     .send({dish})
     .then(res => {
-      console.log(res)
       dispatch(addDishSuccess(res.body));
     })
     .catch(err => {

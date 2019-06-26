@@ -30,7 +30,6 @@ const typesFetched = types => ({
 export const getTypes = () => (dispatch) => {
     request(`${baseUrl}/types`)
         .then(response => {
-            console.log(response.body)
             dispatch(typesFetched(response.body))
         })
         .catch(console.error)
@@ -43,12 +42,10 @@ const createTypeSuccess = dishType => ({
 })
 
 export const createType = (type) => (dispatch) => {
-    console.log('type', type)
     request
         .post(`${baseUrl}/types`)
         .send({type})
         .then(res => {
-            console.log(res)
             dispatch(createTypeSuccess(res.body))
         })
         .catch(console.error)

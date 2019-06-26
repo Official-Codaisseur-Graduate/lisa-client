@@ -1,14 +1,5 @@
 import React from 'react'
 
-// const RenderOptions = (props) => {
-//   return props.types.map(type => {
-//     const { name, id } = type
-//     return (
-//       <option key={id} value={id}>{name}</option>
-//     )
-//   })
-// }
-
 function DishPicker(props) {
   const { dishes, types, onChangeType, onChange, onSubmit, dishName } = props
   const typeOptions = types && types.map(type => {
@@ -37,7 +28,6 @@ function DishPicker(props) {
           }}> 
             <option value="" defaultValue="">Kies een type</option>
             {typeOptions}
-            {/* {props.types && <RenderOptions {...props} />} */}
           </select>
         </label>
         <br />

@@ -43,7 +43,6 @@ export class DishPickerContainer extends Component {
     }
     this.props.addMenuItem(dish)
     this.setState({
-      // typeName: "",
       dishName: ""
     })
     setTimeout(this.updateDisplay(date), 2000)

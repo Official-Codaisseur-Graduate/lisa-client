@@ -12,35 +12,27 @@ export const setDayMenu = menu => {
 }
 
 export const getDayMenu = date => dispatch => {
-  console.log("GET REQ DATE", date)
   request
     .get(`${baseUrl}/menus/?date=${date}`)
     .send(date)
     .then(res => {
-      console.log("RESPONSE: ", res.body)
-      const { menu } = res.body
       dispatch(setDayMenu(res.body))
     })
 }
 
 export const addMenuItem = dish => dispatch => {
-  console.log("ADD TO MENU: ", dish)
   request
     .post(`${baseUrl}/menus`)
     .send({dish})
     .then(res => {
-      console.log(res.body)
       dispatch(getDayMenu(dish.date))
     })
 }
 
 export const deleteMenuItem = (id, date) => dispatch => {
-  console.log("REQ ID", id)
-  console.log("REQ DATE", date)
   request
     .delete(`${baseUrl}/menus/${id}`)
     .then(res => {
-      console.log(res.body)
       dispatch(getDayMenu(date))
     })
 }
