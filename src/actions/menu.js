@@ -33,3 +33,14 @@ export const addMenuItem = dish => dispatch => {
       dispatch(getDayMenu(dish.date))
     })
 }
+
+export const deleteMenuItem = (id, date) => dispatch => {
+  console.log("REQ ID", id)
+  console.log("REQ DATE", date)
+  request
+    .delete(`${baseUrl}/menus/${id}`)
+    .then(res => {
+      console.log(res.body)
+      dispatch(getDayMenu(date))
+    })
+}

@@ -3,12 +3,20 @@ import {connect} from 'react-redux'
 
 import MenuDisplay from './MenuDisplay'
 
+import { deleteMenuItem } from '../../actions/menu'
+
 
 export class MenuDisplayContainer extends Component {
   componentDidMount () {
 
   }
   
+  deleteItem = (event) => {
+    const id = event.target.value
+    const { date } = this.props
+    this.props.deleteMenuItem(id, date)
+  }
+
   render () {
     const { menu, types, date } = this.props
     return (
@@ -21,6 +29,7 @@ export class MenuDisplayContainer extends Component {
           : <MenuDisplay
             menu={menu}
             types={types}
+            deleteItem={this.deleteItem}
           />}
       </div>
     )
@@ -35,14 +44,8 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    
-  }
-}
-
 export default connect(
   mapStateToProps,
   {
-
+    deleteMenuItem
   })(MenuDisplayContainer)
