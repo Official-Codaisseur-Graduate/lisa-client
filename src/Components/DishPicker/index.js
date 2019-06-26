@@ -34,8 +34,6 @@ export class DishPickerContainer extends Component {
 
   onSubmit = (event) => {
     event.preventDefault()
-    console.log("ONSUBMIT STATE", this.state)
-    console.log("ONSUBMIT EVENT", event)
     const { date } = this.props
     const { typeName, dishName } = this.state
     const dish = { 
@@ -45,7 +43,7 @@ export class DishPickerContainer extends Component {
     }
     this.props.addMenuItem(dish)
     this.setState({
-      typeName: "",
+      // typeName: "",
       dishName: ""
     })
     setTimeout(this.updateDisplay(date), 2000)
