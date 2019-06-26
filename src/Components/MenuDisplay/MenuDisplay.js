@@ -3,13 +3,16 @@ import React from 'react'
 
 function MenuDisplay(props) {
   const { menu, deleteItem } = props
-  const groupedMenuItems = menu && menu.reduce((groupedMenuItems, currentItem) => {
-    if (!groupedMenuItems[currentItem.type_name]) {
-      groupedMenuItems = {...groupedMenuItems, [currentItem.type_name]: []}
-    }
-    groupedMenuItems[currentItem.type_name].push(currentItem)
-    return groupedMenuItems
-  }, {})
+  const groupedMenuItems = menu 
+    && menu
+      .sort((a, b) => (a.id > b.id) ? 1 : -1)
+      .reduce((groupedMenuItems, currentItem) => {
+        if (!groupedMenuItems[currentItem.type_name]) {
+          groupedMenuItems = {...groupedMenuItems, [currentItem.type_name]: []}
+        }
+        groupedMenuItems[currentItem.type_name].push(currentItem)
+        return groupedMenuItems
+      }, {})
   const menuItemsByType= groupedMenuItems && Object.keys(groupedMenuItems).map(type => {
 
     const menuItems = groupedMenuItems[type].map(menuItem => {
