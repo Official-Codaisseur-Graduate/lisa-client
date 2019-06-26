@@ -2,7 +2,7 @@ import React from 'react'
 
 
 function MenuDisplay(props) {
-  const { menu, date } = props
+  const { menu, deleteItem } = props
   const groupedMenuItems = menu && menu.reduce((groupedMenuItems, currentItem) => {
     if (!groupedMenuItems[currentItem.type_name]) {
       groupedMenuItems = {...groupedMenuItems, [currentItem.type_name]: []}
@@ -13,11 +13,11 @@ function MenuDisplay(props) {
   const menuItemsByType= groupedMenuItems && Object.keys(groupedMenuItems).map(type => {
 
     const menuItems = groupedMenuItems[type].map(menuItem => {
-      const { dish_name, id } = menuItem
+      const { dish_name, date, id } = menuItem
       return (
         <div className="menuItem" key={id}>
           <p key={id}>{dish_name}</p>
-          <button style={{color: 'red'}}>X</button>
+          <button value={id} onClick={deleteItem} style={{color: 'red'}}>X</button>
         </div>
       )
     })
