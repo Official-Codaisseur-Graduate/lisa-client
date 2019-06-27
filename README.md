@@ -1,3 +1,18 @@
+# Introduction 
+This project contains the UI for the Vitalis Menu Editor. It is to be used by the Vitalis chef to enter types, dishes and view the menu.
+
+# Overview
+
+The main functionality is: 
+* Adding new types by name
+* Adding new dishes by types
+* Choosing from existing dishes and types the menu for a specific date.
+
+The types and dishes update automatically upon addition.
+
+It is connected to the Database on localhost:5000 (link).
+The database uses REST APIs to supply data. 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
