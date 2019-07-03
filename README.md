@@ -1,17 +1,41 @@
 # Introduction 
-This project contains the UI for the Vitalis Menu Editor. It is to be used by the Vitalis chef to enter types, dishes and view the menu.
+This is part of our week-long graduation project called LISA that we did for Vitalis (de Wilgenhof), a retirement home in Eindhoven. This project contains the Vitalis Menu Editor, the staff UI-part of the project. Project LISA also includes a Google Assistant app that reads the menu to residents. This UI was requested by the product owner to make it easier for the chef to make and edit his weekly menu, while at the same time adding to the database that our Google Assistant app reads from. 
 
 # Overview
 
 The main functionality is: 
-* Adding new types by name
-* Adding new dishes by types
+* Adding new dish types (courses) by name
+* Adding new dishes by type
 * Choosing from existing dishes and types the menu for a specific date.
 
 The types and dishes update automatically upon addition.
 
-It is connected to the Database on localhost:5000 (link).
-The database uses REST APIs to supply data. 
+It is connected to the Database on localhost:5000. The database uses a REST API to interact with the UI.
+
+The accompanying Google Assistant app uses Dialogflow for user interaction, this is connected to our back end with webhooks.
+
+You can find the repository for our server [HERE](https://github.com/samaneh-dallalizad/lisa_project)
+
+
+## Product Owner/Requests
+We went to Eindhoven and had a meeting with the product owner and the chef to discuss what their UI should look like. Since the time we had to work on this project was very limited and we wanted to present a working product, we did not get to implement all the functionality that was discussed. Some features that can be added include: 
+
+### Menu templates 
+At Vitalis they work with four week menus on rotation, with a spring/summer and a fall/winter cycle. It would be great if the chef could select a week menu, or even a a four week cycle in one click.
+
+### Generating hard copy menus/order forms
+Since not everyone will use the Google Assistant app right away, they will still need printed menus. It would be great if these can be generated in our UI in a printer-friendly (pdf) template. The same goes for the (hard copy) order forms they use in the restaurant, so people who are less mobile can have their orders picked up by staff.
+
+### Resources panel
+An overview of all dishes, types and (eventually) templates, with the option to edit them or delete them from the database.
+
+### Authorization
+Given the nature of the business, this app and the fact that it will only be used on-site, it is not very prone to tampering. Still, this UI could use some kind of authorization to make sure only the chef (and staff) can access it.
+
+### Scale up to other locations
+Since Vitalis is a big organization with over 20 locations all across the country, we also touched on scalability. It would be great if they would be able to use this system at other locations in the future as well.
+
+=====
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
