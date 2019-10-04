@@ -27,6 +27,15 @@
   padding-top: 2vh;
 }
 
+.menuOptions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.menuOption {
+  padding: 7vw;
+}
+
 .menuEditor {
   display: flex;
 }
