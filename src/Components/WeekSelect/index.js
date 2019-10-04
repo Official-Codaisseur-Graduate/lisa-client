@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import WeekCalender from './WeekCalender';
 import { setWeekDate } from '../../actions/date';
 import { getWeekMenu } from '../../actions/menu';
+import ExportToPdf from "../ExportToPdf"
 
 const WeekSelect = (props) => {
 	const selectWeekDates = (dates) => {
@@ -17,6 +18,7 @@ const WeekSelect = (props) => {
 			<p>WeekKalender orgineel</p>
 			<p>WeekKalender copy</p>
 			<p>weekMenu</p>
+			<ExportToPdf />
 		</div>
 	);
 };
