@@ -12,8 +12,8 @@ function App() {
 				<h1 className="appHeader">Vitalis Menu Editor</h1>
 				<Link to="/week">Week select</Link>
 			</header>
-			<Route exact path to="/" component={Menu} />
-			<Route to="/week" component={WeekSelect} />
+			<Route exact path="/" component={Menu} />
+			<Route path="/week" component={WeekSelect} />
 		</div>
 	);
 }
