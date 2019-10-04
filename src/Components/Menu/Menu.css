@@ -42,6 +42,8 @@
 
 .MenuDisplay {
   margin: auto;
+  height: 90vh;
+  overflow: scroll;
 }
 
 .menuItem p {
