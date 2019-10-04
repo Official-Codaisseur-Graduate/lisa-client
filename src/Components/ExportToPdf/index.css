@@ -26,4 +26,9 @@
 .popup-close-button {
     width: 10%;
     font-weight: bold;
+    cursor: pointer;
+}
+
+.export-to-pdf {
+    cursor: pointer;
 }

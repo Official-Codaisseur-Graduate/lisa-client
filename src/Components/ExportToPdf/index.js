@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./index.css";
+import PdfDocument from "../PdfDocument"
 
 export class ExportToPdf extends Component {
   state = { showPopup: false };
@@ -17,6 +18,7 @@ export class ExportToPdf extends Component {
             <div className="popup-header">
               <button onClick={this.triggerPopup} className="popup-close-button">X</button>
             </div>
+            <PdfDocument />
           </div>
         </div>
       ) : (
