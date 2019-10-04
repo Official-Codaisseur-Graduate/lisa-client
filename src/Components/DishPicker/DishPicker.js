@@ -16,7 +16,7 @@ function DishPicker(props) {
   })
   return (
     <div className="DishPicker">
-      <form onSubmit={onSubmit}> 
+      <form onSubmit={onSubmit}>
         <label>
           Type gerecht:
           <br />
@@ -24,8 +24,7 @@ function DishPicker(props) {
             // e.persist()
             const id = e.target.value;
             onChangeType(id);
-            console.log("close to the source", id)
-          }}> 
+          }}>
             <option value="" defaultValue="">Kies een type</option>
             {typeOptions}
           </select>
@@ -34,14 +33,14 @@ function DishPicker(props) {
         <label>
           Gerecht:
           <br />
-          <select className="dishPickerName" name="dishName" required={true} onChange={onChange} value={dishName}> 
-            <option value="" defaultValue="">Kies een gerecht</option>            
+          <select className="dishPickerName" name="dishName" required={true} onChange={onChange} value={dishName}>
+            <option value="" defaultValue="">Kies een gerecht</option>
             {dishOptions}
           </select>
         </label>
         <br />
         <input type="submit" value="Voeg gerecht toe" />
-      </form>  
+      </form>
     </div>
   );
 }

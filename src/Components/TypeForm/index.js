@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
+
 import { createType, getTypes } from '../../actions/types'
 import TypeForm from './TypeForm'
-
 
 export class TypeFormContainer extends Component {
   state = {
@@ -25,15 +25,14 @@ export class TypeFormContainer extends Component {
     this.setState({
       name: ''
     })
-   
   }
-  
-  render () {
-    const { onChange, onSubmit} = this
+
+  render() {
+    const { onChange, onSubmit } = this
     const { name } = this.state
     return (
       <div className="TypeForm">
-        <TypeForm 
+        <TypeForm
           name={name}
           onChange={onChange}
           onSubmit={onSubmit}
@@ -51,6 +50,6 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { 
+  {
     createType, getTypes
   })(TypeFormContainer)
