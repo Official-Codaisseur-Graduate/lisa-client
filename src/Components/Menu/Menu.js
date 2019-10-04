@@ -26,7 +26,6 @@ function Menu(props) {
 					</div>
 					<DishPicker />
 					<DishForm />
-					<TypeForm />
 				</div>
 				<MenuDisplay />
 			</div>
