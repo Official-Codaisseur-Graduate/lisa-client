@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 
 import DishPicker from './DishPicker'
 
@@ -12,8 +12,8 @@ export class DishPickerContainer extends Component {
     typeName: '',
     dishName: '',
   }
-  
-  componentDidMount () {
+
+  componentDidMount() {
 
   }
 
@@ -36,8 +36,8 @@ export class DishPickerContainer extends Component {
     event.preventDefault()
     const { date } = this.props
     const { typeName, dishName } = this.state
-    const dish = { 
-      type_name: typeName, 
+    const dish = {
+      type_name: typeName,
       dish_name: dishName,
       date
     }
@@ -49,13 +49,13 @@ export class DishPickerContainer extends Component {
   }
 
   updateDisplay = date => {
-    this.props.getDayMenu(date)  
+    this.props.getDayMenu(date)
   }
-  
-  render () {
+
+  render() {
     const { date, types, dishes } = this.props
     return (
-      <DishPicker 
+      <DishPicker
         date={date}
         types={types}
         dishes={dishes}

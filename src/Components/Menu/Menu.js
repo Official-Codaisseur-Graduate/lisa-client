@@ -8,27 +8,26 @@ import TypeForm from '../TypeForm'
 import MenuDisplay from '../MenuDisplay'
 
 function Menu(props) {
-  const { changeDate } = props
   return (
     <div className="Menu">
       <div className="menuBar">
         <h1 className="appHeader">Vitalis Menu Editor</h1>
       </div>
       <div className="menuEditor">
-      <div className="sideBar">
-        <div className="Calendar">
-          <Calendar 
-            locale="nl-NL"
-            onClickDay={date => props.changeDate(date)}
-          />
+        <div className="sideBar">
+          <div className="Calendar">
+            <Calendar
+              locale="nl-NL"
+              onClickDay={date => props.changeDate(date)}
+            />
+          </div>
+          <DishPicker />
+          <DishForm />
+          <TypeForm />
         </div>
-        <DishPicker />
-        <DishForm />
-        <TypeForm />
+        <MenuDisplay />
       </div>
-      <MenuDisplay />
-      </div>
-      
+
     </div>
   );
 }

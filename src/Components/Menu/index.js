@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 import moment from 'moment'
 import Menu from './Menu'
 
@@ -8,7 +8,7 @@ import { getDayMenu } from '../../actions/menu'
 
 
 export class MenuContainer extends Component {
-  componentDidMount () {
+  componentDidMount() {
 
   }
 
@@ -19,31 +19,19 @@ export class MenuContainer extends Component {
 
     // Get-request to get all dishes for this date
     this.props.getDayMenu(date)
-  }  
+  }
 
-  render () {
+  render() {
     return (
       <Menu
         changeDate={this.changeDate}
-      /> 
+      />
     )
   }
 }
 
-const mapStateToProps = state => {
-  return {
-
-  }
-}
-
-const mapDispatchToProps = dispatch => {
-  return {
-    
-  }
-}
-
 export default connect(
-  mapStateToProps, 
+  null,
   {
     setDate,
     getDayMenu
