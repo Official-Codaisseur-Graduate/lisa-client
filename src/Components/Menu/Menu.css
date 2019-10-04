@@ -1,12 +1,16 @@
 .menuBar {
   height: 10vh;
-  width: 100%;
+  width: calc(100% - 4rem);
   margin: 0;
   background-color: darkslateblue;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
 }
 
 .appHeader {
-  margin: auto;
   padding-top: 2vh;
   color: white;
 }
@@ -18,38 +22,22 @@
 }
 
 .Calendar {
-  width: 36vh; 
+  width: 36vh;
   margin: 0 2vh 2vh 2vh;
   padding-top: 2vh;
 }
-  
+
 .menuEditor {
   display: flex;
 }
-  
+
 .MenuDisplay {
   margin: auto;
-}
-
-.menuOptions {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-.menuOption {
-  padding: 7vw;
-}
-
-.menuItemType {
-  margin: auto;
-  display: flex;
-  flex-direction: column;
 }
 
 .menuItem p {
   margin: 0 auto;
 }
-
 .menuItem {
   margin: 0 auto;
   display: flex;
@@ -62,9 +50,9 @@
   display: flex;
   flex-direction: column;
 }
-    
+
 .DishPicker {
-  height: 15.5vh
+  height: 15.5vh;
 }
 
 .DishForm {
@@ -82,7 +70,6 @@
   width: 30vh;
   height: 2.5vh;
 }
-
 
 .TypeForm {
   height: 12vh;

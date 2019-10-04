@@ -6,12 +6,14 @@ import DishPicker from '../DishPicker'
 import DishForm from '../DishForm'
 import TypeForm from '../TypeForm'
 import MenuDisplay from '../MenuDisplay'
+import ExportToPdf from "../ExportToPdf"
 
 function Menu(props) {
   return (
     <div className="Menu">
       <div className="menuBar">
         <h1 className="appHeader">Vitalis Menu Editor</h1>
+        <ExportToPdf />
       </div>
       <div className="menuEditor">
         <div className="sideBar">
