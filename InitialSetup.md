@@ -2,9 +2,9 @@
 
 1) Git clone both the [CLIENT](https://github.com/Official-Codaisseur-Graduate/lisa-client) and the [SERVER](https://github.com/Official-Codaisseur-Graduate/lisa-server)
 
-2) npm install for both, to install the used packages.
+2) Run npm install for both, to install the used packages.
 
-3) start the database as mentioned with the below command:
+3) Start the database as mentioned with the below command:
 
 `$ docker run --rm -e POSTGRES_PASSWORD=secret -p 5432:5432 postgres`
 
@@ -15,7 +15,7 @@
 6) Make sure to make the server available online using either serveo or a heroku link. 
 To use Serveo copy this: `ssh -R 80:localhost:5000 serveo.net` (the 5000 is the port that the server runs on). Then copy it in a empty terminal and run it by typing 'yes'. The https link in green is your server URL.
 
-7) set up dialogflow: 
+7) Set up dialogflow: 
 * To edit LISA, you will need to log in with her Google account [here](https://dialogflow.cloud.google.com/#/agent/e4ee0583-d68d-4127-a8bd-49f3522ded28/intents).
 
 * Google ID: lisa.vitalis.assistant@gmail.com
