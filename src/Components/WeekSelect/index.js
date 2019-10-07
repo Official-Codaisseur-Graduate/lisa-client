@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import moment from 'moment';
 
 import WeekCalender from './WeekCalender';
 import { setWeekDate } from '../../actions/date';
@@ -8,8 +9,10 @@ import ExportToPdf from "../ExportToPdf"
 
 const WeekSelect = (props) => {
 	const selectWeekDates = (dates) => {
-		props.setWeekDate(dates[0]);
-		props.getWeekMenu(dates[0]);
+		const date = moment(dates[0]).format('YYYY-MM-DD');
+
+		props.setWeekDate(date);
+		props.getWeekMenu(date);
 	};
 
 	return (

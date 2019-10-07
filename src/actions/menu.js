@@ -19,6 +19,7 @@ export const getDayMenu = (date) => (dispatch) => {
 };
 
 export const addMenuItem = (dish) => (dispatch) => {
+	console.log(dish);
 	request.post(`${baseUrl}/menus`).send({ dish }).then((res) => {
 		dispatch(getDayMenu(dish.date));
 	});
