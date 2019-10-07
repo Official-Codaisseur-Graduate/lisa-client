@@ -1,15 +1,19 @@
 .menuBar {
   height: 10vh;
-  width: 100%;
+  width: calc(100% - 4rem);
   margin: 0;
   background-color: darkslateblue;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
 }
 
-  .appHeader {
-    margin: auto;
-    padding-top: 2vh;
-    color: white;
-  }
+.appHeader {
+  padding-top: 2vh;
+  color: white;
+}
 
 .sideBar {
   height: 90vh;
@@ -17,67 +21,76 @@
   background-color: lightgrey;
 }
 
-  .Calendar {
-    width: 36vh; 
-    margin: 0 2vh 2vh 2vh;
-    padding-top: 2vh;
-  }
-  
-  .menuEditor {
-    display: flex;
-  }
-  
-    .MenuDisplay {
-      margin: auto
-    }
+.Calendar {
+  width: 36vh;
+  margin: 0 2vh 2vh 2vh;
+  padding-top: 2vh;
+}
 
-      .menuItem p {
-        margin: 0 auto;
-      }
-      .menuItem {
-        margin: 0 auto;
-        display: flex
-      }
+.menuOptions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
 
-  .DishForm,
-  .DishPicker {
-    width: 36vh;
-    margin: 1vh 2vh 2vh 2vh;
-    display: flex;
-    flex-direction: column;
-  }
-    
-  .DishPicker {
-    height: 15.5vh
-  }
+.menuOption {
+  padding: 7vw;
+}
 
-  .DishForm {
-    padding-top: 2vh;
-    height: 18vh;
-    background-color: white;
-  }
+.menuEditor {
+  display: flex;
+}
 
-    .dishPickerType,
-    .dishPickerName,
-    .dishFormType,
-    .dishFormName,
-    .typeFormName {
-      margin: 1vh auto;
-      width: 30vh;
-      height: 2.5vh;
-    }
-  
+.MenuDisplay {
+  margin: auto;
+  height: 90vh;
+  overflow: scroll;
+}
 
-  .TypeForm {
-    height: 12vh;
-    width: 36vh;
-    margin: 2vh auto;
-    padding-top: 2vh;
-    display: flex;
-    flex-direction: column;
-    background-color: white;
+.menuItem p {
+  margin: 0 auto;
+}
+.menuItem {
+  margin: 0 auto;
+  display: flex;
+}
 
-  }
+.DishForm,
+.DishPicker {
+  width: 36vh;
+  margin: 1vh 2vh 2vh 2vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.DishPicker {
+  height: 15.5vh;
+}
+
+.DishForm {
+  padding-top: 2vh;
+  height: 18vh;
+  background-color: white;
+}
+
+.dishPickerType,
+.dishPickerName,
+.dishFormType,
+.dishFormName,
+.typeFormName {
+  margin: 1vh auto;
+  width: 30vh;
+  height: 2.5vh;
+}
+
+.TypeForm {
+  height: 12vh;
+  width: 36vh;
+  margin: 2vh auto;
+  padding-top: 2vh;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
 
 label {
   margin: 1vh auto;

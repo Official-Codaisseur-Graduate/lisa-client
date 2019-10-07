@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
+
 import { getTypes } from '../../actions/types'
 import { createDish } from '../../actions/dishes'
- 
+
 import DishForm from './DishForm'
 
 export class DishFormContainer extends Component {
@@ -32,14 +33,14 @@ export class DishFormContainer extends Component {
       dishName: ""
     })
   }
-  
-  render () {
+
+  render() {
     const { onChange, onSubmit, props, state } = this
     const { types } = props
     const { typeId, dishName } = state
     return (
       <div className="DishForm">
-        <DishForm 
+        <DishForm
           types={types}
           type={typeId}
           dishName={dishName}
@@ -59,8 +60,8 @@ const mapStateToProps = state => {
 
 
 export default connect(
-  mapStateToProps, 
-  { 
-    getTypes, 
-    createDish 
+  mapStateToProps,
+  {
+    getTypes,
+    createDish
   })(DishFormContainer)
