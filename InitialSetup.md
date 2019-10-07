@@ -8,17 +8,29 @@
 
 `$ docker run --rm -e POSTGRES_PASSWORD=secret -p 5432:5432 postgres`
 
-4) Start the server and double check if everything is working. Make sure to use either use serveo or a heroku link. Make sure to change this in the dialogflow fulfillment tab as well.
+4) Start the server and double check if everything is working.
 
 5) run npm start to start the client and add some mock data on any day.
 
-6) Talk to google home assistant (this can also be the app on your mobile device) and ask 'Hey google, praat met de keuken' or 'Hey Google, talk to the kitchen'
+6) Make sure to make the server available online using either use serveo or a heroku link. 
+To use Serveo copy this: `ssh -R 80:localhost:5000 serveo.net` (the 5000 is the port that the server runs on). Then copy it in a empty terminal and run it by typing 'yes'. The https link in green is your server URL.
+
+7) set up dialogflow: 
+To edit LISA, you will need to log in with her Google account [here](https://dialogflow.cloud.google.com/#/agent/e4ee0583-d68d-4127-a8bd-49f3522ded28/intents).
+
+Google ID: lisa.vitalis.assistant@gmail.com
+For the password, please contact Rein.
+
+To connect LISA to your server as a webhook, add <!your server URL!>/google-menus in the fulfillment tab.
+(scroll down to see the save button).
+
+6) Talk to google home assistant (this can also be the app on your mobile device but make sure to sign in as Lisa) and ask 'Hey google, praat met de keuken' wich means 'Hey Google, talk to the kitchen'. It only works in Dutch.
 
 7) Ask what the menu is for the day you made some items for. You can also ask for just the starter, main-course, dessert for a specific day.
 
 8) Good luck
 
 For more detailed information please read the more extensive README's
-- [CLIENT README](https://github.com/Official-Codaisseur-Graduate/lisa-client/blob/development/README.md)
-- [SERVER README](https://github.com/Official-Codaisseur-Graduate/lisa-server/blob/development/readme.md)
-- [DIALOGFLOW README](https://github.com/Official-Codaisseur-Graduate/lisa-server/blob/development/dialogflow-README/README.md)
+- [CLIENT README](https://github.com/Official-Codaisseur-Graduate/lisa-client/blob/master/README.md)
+- [SERVER README](https://github.com/Official-Codaisseur-Graduate/lisa-server/blob/master/readme.md)
+- [DIALOGFLOW README](https://github.com/Official-Codaisseur-Graduate/lisa-server/blob/master/dialogflow-README/README.md)
