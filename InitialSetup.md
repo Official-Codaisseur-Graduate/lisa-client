@@ -16,19 +16,19 @@
 To use Serveo copy this: `ssh -R 80:localhost:5000 serveo.net` (the 5000 is the port that the server runs on). Then copy it in a empty terminal and run it by typing 'yes'. The https link in green is your server URL.
 
 7) set up dialogflow: 
-To edit LISA, you will need to log in with her Google account [here](https://dialogflow.cloud.google.com/#/agent/e4ee0583-d68d-4127-a8bd-49f3522ded28/intents).
+* To edit LISA, you will need to log in with her Google account [here](https://dialogflow.cloud.google.com/#/agent/e4ee0583-d68d-4127-a8bd-49f3522ded28/intents).
 
-Google ID: lisa.vitalis.assistant@gmail.com
-For the password, please contact Rein.
+* Google ID: lisa.vitalis.assistant@gmail.com
+* For the password, please contact Rein.
 
-To connect LISA to your server as a webhook, add <!your server URL!>/google-menus in the fulfillment tab.
+* To connect LISA to your server as a webhook, add <!your server URL!>/google-menus in the fulfillment tab.
 (scroll down to see the save button).
 
-7) Talk to google home assistant (this can also be the app on your mobile device but make sure to sign in as Lisa) and ask 'Hey google, praat met de keuken' wich means 'Hey Google, talk to the kitchen'. It only works in Dutch.
+8) Talk to google home assistant (this can also be the app on your mobile device but make sure to sign in as Lisa) and ask 'Hey google, praat met de keuken' wich means 'Hey Google, talk to the kitchen'. It only works in Dutch.
 
-8) Ask what the menu is for the day you made some items for. You can also ask for just the starter, main-course, dessert for a specific day.
+9) Ask what the menu is for the day you made some items for. You can also ask for just the starter, main-course, dessert for a specific day.
 
-9) Good luck
+10) Good luck
 
 For more detailed information please read the more extensive README's
 - [CLIENT README](https://github.com/Official-Codaisseur-Graduate/lisa-client/blob/master/README.md)
