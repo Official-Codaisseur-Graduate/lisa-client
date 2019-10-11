@@ -10,7 +10,8 @@ function App() {
 		<div className="App">
 			<header className="menuBar">
 				<h1 className="appHeader">Vitalis Menu Editor</h1>
-				<Link to="/week">Week select</Link>
+				<Link to='/'><button>Hoofdpagina</button></Link>
+				<Link to="/week"><button>Week select</button></Link>
 			</header>
 			<Route exact path="/" component={Menu} />
 			<Route path="/week" component={WeekSelect} />
