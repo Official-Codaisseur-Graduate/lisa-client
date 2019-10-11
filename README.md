@@ -29,6 +29,8 @@ At Vitalis they work with four week menus on rotation, with a spring/summer and 
 
 (update class 29) Copying the weekmenu is a function we have been working on and is partially done. There is a new 'tab' with the option to select a week and getting the corresponding week menu back to the front. The next step would be to be able to copy the week to the week that the chef would like to copy it to.
 
+Update 11-10: we had a small meeting with the PO and he would also like to see the weekmenu permanently on a screen. It is recommended to make a 3rd page on the client which display the menu on there so they could navigate to that page and permanently show it.
+
 ### Generating hard copy menus/order forms
 Since not everyone will use the Google Assistant app right away, they will still need printed menus. It would be great if these can be generated in our UI in a printer-friendly (pdf) template. The same goes for the (hard copy) order forms they use in the restaurant, so people who are less mobile can have their orders picked up by staff. 
 
