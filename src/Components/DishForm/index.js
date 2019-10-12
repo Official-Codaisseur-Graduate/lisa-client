@@ -20,7 +20,6 @@ export class DishFormContainer extends Component {
     this.setState({
       [event.target.name]: event.target.value
     })
-    console.log(this.state)
   }
 
   onSubmit = async (event) => {
