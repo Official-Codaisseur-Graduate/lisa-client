@@ -9,7 +9,7 @@ export class MenuDisplayContainer extends Component {
 
   deleteItem = (event) => {
     const id = event.target.value
-    const { date } = this.props
+    const { date } = this.props.date
     this.props.deleteMenuItem(id, date)
   }
 

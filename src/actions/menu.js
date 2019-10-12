@@ -3,44 +3,43 @@ import { baseUrl } from '../constants';
 import { SET_DAY_MENU, SET_WEEK_MENU } from './';
 
 export const setDayMenu = (menu) => {
-	return {
-		type: SET_DAY_MENU,
-		menu
-	};
+  return {
+    type: SET_DAY_MENU,
+    menu
+  };
 };
 
 export const getDayMenu = (date) => (dispatch) => {
-	request
-		.get(`${baseUrl}/menus/?date=${date}`)
-		.send(date)
-		.then((res) => {
-			dispatch(setDayMenu(res.body));
-		});
+  request
+    .get(`${baseUrl}/menus/?date=${date}`)
+    .send(date)
+    .then((res) => {
+      dispatch(setDayMenu(res.body));
+    });
 };
 
 export const addMenuItem = (dish) => (dispatch) => {
-	console.log(dish);
-	request.post(`${baseUrl}/menus`).send({ dish }).then((res) => {
-		dispatch(getDayMenu(dish.date));
-	});
+  request.post(`${baseUrl}/menus`).send({ dish }).then((res) => {
+    dispatch(getDayMenu(dish.date));
+  });
 };
 
 export const deleteMenuItem = (id, date) => (dispatch) => {
-	request.delete(`${baseUrl}/menus/${id}`).then((res) => {
-		dispatch(getDayMenu(date));
-	});
+  request.delete(`${baseUrl}/menus/${id}`)
+    .then(() => {
+      return dispatch(getDayMenu(date));
+    });
 };
 
 export const setWeekMenu = (menu) => {
-	return {
-		type: SET_WEEK_MENU,
-		menu
-	};
+  return {
+    type: SET_WEEK_MENU,
+    menu
+  };
 };
 
 export const getWeekMenu = (date) => (dispatch) => {
-	console.log('action', date);
-	request
-		.get(`${baseUrl}/menu/week/${date}`)
-		.then((res) => dispatch(setWeekMenu(res.body)));
+  request
+    .get(`${baseUrl}/menu/week/${date}`)
+    .then((res) => dispatch(setWeekMenu(res.body)));
 };

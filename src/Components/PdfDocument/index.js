@@ -11,8 +11,6 @@ import {
 } from "@react-pdf/renderer";
 import { sampleData } from "./menusSampleData";
 
-console.log(sampleData);
-
 const PdfDocument = () => (
   <div className="pdf-viewer-and-downloader">
     <PDFViewer>
@@ -40,26 +38,26 @@ const styles = StyleSheet.create({
 });
 
 const headingStyle = {
-    width: "90%",
-    fontWeight: "bold",
-    margin: "10px 0",
-    marginLeft: "10%"
+  width: "90%",
+  fontWeight: "bold",
+  margin: "10px 0",
+  marginLeft: "10%"
 }
 
 const rowStyle = {
-    display: "flex",
-    flexDirection: "row",
-    width: "90%",
-    marginLeft: "10%",
-    justifyContent: "space-between",
-    marginBottom: "5px"
+  display: "flex",
+  flexDirection: "row",
+  width: "90%",
+  marginLeft: "10%",
+  justifyContent: "space-between",
+  marginBottom: "5px"
 }
 
 const rowElement = {
-    width: "45%",
-    display: "flex",
-    justifyContent: "center",
-    textAlign: "center"
+  width: "45%",
+  display: "flex",
+  justifyContent: "center",
+  textAlign: "center"
 }
 
 // Create Document Component
@@ -70,27 +68,27 @@ const MyDocument = () => {
     <Document>
       <Page size="A4" style={styles.page}>
         <View>
-            <View style={headingStyle}><Text>Woensdag</Text></View>
-            <View style={rowStyle}>
-                <View style={rowElement}><Text>{menu.day3.vg1}</Text></View>
-                <View style={rowElement}><Text>{menu.day3.vg2}</Text></View>
-            </View>
-            <View style={rowStyle}>
-                <View style={rowElement}><Text>{menu.day3.hg1}</Text></View>
-                <View style={rowElement}><Text>{menu.day3.hg2}</Text></View>
-            </View>
-            <View style={rowStyle}>
-                <View style={rowElement}><Text>{menu.day3.s1}</Text></View>
-                <View style={rowElement}><Text>{menu.day3.s2}</Text></View>
-            </View>
-            <View style={rowStyle}>
-                <View style={rowElement}><Text>{menu.day3.bg1}</Text></View>
-                <View style={rowElement}><Text>{menu.day3.bg2}</Text></View>
-            </View>
-            <View style={rowStyle}>
-                <View style={rowElement}><Text>{menu.day3.ng1}</Text></View>
-                <View style={rowElement}><Text>{menu.day3.ng2}</Text></View>
-            </View>
+          <View style={headingStyle}><Text>Woensdag</Text></View>
+          <View style={rowStyle}>
+            <View style={rowElement}><Text>{menu.day3.vg1}</Text></View>
+            <View style={rowElement}><Text>{menu.day3.vg2}</Text></View>
+          </View>
+          <View style={rowStyle}>
+            <View style={rowElement}><Text>{menu.day3.hg1}</Text></View>
+            <View style={rowElement}><Text>{menu.day3.hg2}</Text></View>
+          </View>
+          <View style={rowStyle}>
+            <View style={rowElement}><Text>{menu.day3.s1}</Text></View>
+            <View style={rowElement}><Text>{menu.day3.s2}</Text></View>
+          </View>
+          <View style={rowStyle}>
+            <View style={rowElement}><Text>{menu.day3.bg1}</Text></View>
+            <View style={rowElement}><Text>{menu.day3.bg2}</Text></View>
+          </View>
+          <View style={rowStyle}>
+            <View style={rowElement}><Text>{menu.day3.ng1}</Text></View>
+            <View style={rowElement}><Text>{menu.day3.ng2}</Text></View>
+          </View>
         </View>
       </Page>
     </Document>
@@ -227,4 +225,3 @@ const menuObject = () => {
   );
 };
 
-console.log(menuObject());
