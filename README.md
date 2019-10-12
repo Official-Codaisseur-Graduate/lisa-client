@@ -3,6 +3,8 @@
 # Introduction 
 This is part of our week-long graduation project called LISA that we did for Vitalis (de Wilgenhof), a retirement home in Eindhoven. This project contains the Vitalis Menu Editor, the staff UI-part of the project. Project LISA also includes a Google Assistant app that reads the menu to residents. This UI was requested by the product owner to make it easier for the chef to make and edit his weekly menu, while at the same time adding to the database that our Google Assistant app reads from. 
 
+You can find the repository for our server [here](https://github.com/Official-Codaisseur-Graduate/lisa-server).
+
 # Overview
 
 The main functionality is: 
@@ -17,9 +19,6 @@ The dishes update automatically upon addition.
 It is connected to the Database on localhost:5000. The database uses a REST API to interact with the UI.
 
 The accompanying Google Assistant app uses Dialogflow for user interaction, this is connected to our back end with webhooks.
-
-You can find the repository for our server [HERE](https://github.com/samaneh-dallalizad/lisa_project)
-
 
 ## Product Owner/Requests
 We went to Eindhoven and had a meeting with the product owner and the chef to discuss what their UI should look like. Since the time we had to work on this project was very limited and we wanted to present a working product, we did not get to implement all the functionality that was discussed. Some features that can be added include: 
