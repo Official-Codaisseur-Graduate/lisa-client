@@ -33,7 +33,7 @@ Update 11-10: we had a small meeting with the PO and he would also like to see t
 ### Generating hard copy menus/order forms
 Since not everyone will use the Google Assistant app right away, they will still need printed menus. It would be great if these can be generated in our UI in a printer-friendly (pdf) template. The same goes for the (hard copy) order forms they use in the restaurant, so people who are less mobile can have their orders picked up by staff. 
 
-(update class 29) update is done in seperate readme.md see [HERE](https://github.com/Official-Codaisseur-Graduate/lisa-client/blob/master/PDF-README.md)
+(update class 29) update is done in seperate readme.md see [HERE](https://github.com/Official-Codaisseur-Graduate/lisa-client/blob/master/PDF-README.md).UPDATE 15/10/19 They would also like a button to print the PDF DAY MENU.
 
 ### Resources panel
 An overview of all dishes, types and (eventually) templates, with the option to edit them or delete them from the database.
