@@ -24,7 +24,7 @@ To use Serveo copy this: `ssh -R 80:localhost:5000 serveo.net` (the 5000 is the 
 * To connect LISA to your server as a webhook, add <!your server URL!>/google-menus in the fulfillment tab.
 (scroll down to see the save button).
 
-8) Talk to google home assistant (this can also be the app on your mobile device but make sure to sign in as Lisa) and ask 'Hey google, praat met de keuken' wich means 'Hey Google, talk to the kitchen'. It only works in Dutch.
+8) Talk to google home assistant (this can also be the app on your mobile device but make sure to sign in as Lisa) and ask 'Hey google, praat met de kok' wich means 'Hey Google, talk to the chef'. It only works in Dutch.
 
 9) Ask what the menu is for the day you made some items for. You can also ask for just the starter, main-course, dessert for a specific day.
 
