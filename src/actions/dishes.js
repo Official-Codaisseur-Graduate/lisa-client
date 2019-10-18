@@ -1,11 +1,10 @@
 import * as request from "superagent";
 import { baseUrl } from "../constants";
-import { 
+import {
   DISHES_FETCHED,
   ADD_DISH_SUCCESS,
   DISH_UPDATE_SUCCESS,
-  DISH_DELETE_SUCCESS,
-  DISH_FETCHED 
+  DISH_FETCHED
 } from './'
 
 //loads dishes based on an event
@@ -25,10 +24,10 @@ const dishesFetched = dishes => ({
 //loads one dish based on dish id 
 export const getDish = (id) => (dispatch) => {
   request(`${baseUrl}/types/${id}`)
-      .then(response => {
-          dispatch(dishFetched(response.body))
-      })
-      .catch(console.error)
+    .then(response => {
+      dispatch(dishFetched(response.body))
+    })
+    .catch(console.error)
 }
 
 const dishFetched = dish => ({
@@ -40,7 +39,7 @@ const dishFetched = dish => ({
 export const createDish = dish => dispatch => {
   request
     .post(`${baseUrl}/dishes`)
-    .send({dish})
+    .send({ dish })
     .then(res => {
       dispatch(addDishSuccess(res.body));
     })
@@ -55,17 +54,10 @@ const addDishSuccess = dish => ({
 });
 
 // delete dish
-const dishDeleteSuccess = id => ({
-  type: DISH_DELETE_SUCCESS,
-  id
-})
-
 export const deleteDish = (id) => (dispatch) => {
   request
-      .delete(`${baseUrl}/dishes/${id}`)
-      .then( dispatch(dishDeleteSuccess(id))
-      )
-      .catch(console.error)
+    .delete(`${baseUrl}/dishes/${id}`)
+    .catch(console.error)
 }
 
 //update dish
@@ -76,10 +68,10 @@ const dishUpdateSuccess = dish => ({
 
 export const updateDish = (id, data) => (dispatch) => {
   request
-      .put(`${baseUrl}/dishes/${id}`)
-      .send(data)
-      .then(response => {
-          dispatch(dishUpdateSuccess(response.body))
-      })
-      .catch(console.error)
+    .put(`${baseUrl}/dishes/${id}`)
+    .send(data)
+    .then(response => {
+      dispatch(dishUpdateSuccess(response.body))
+    })
+    .catch(console.error)
 }
