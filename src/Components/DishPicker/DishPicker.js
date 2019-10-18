@@ -40,6 +40,7 @@ function DishPicker(props) {
         </label>
         <br />
         <input type="submit" value="Voeg gerecht toe" />
+        <button onClick={props.onDelete} style={{ color: 'red' }}>X</button>
       </form>
     </div>
   );
