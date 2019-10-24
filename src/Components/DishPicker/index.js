@@ -15,14 +15,14 @@ export class DishPickerContainer extends Component {
   componentDidMount() { }
 
   onChangeType = (id) => {
+    //console.log('onchange', this.props.getDishes(id, this.props.currentLocationState))
     const { types } = this.props;
-    const { locationName } = this.props.match.params;
 
     const selectedType = types.find((type) => type.id == id);
     this.setState({
       typeName: selectedType.name
     });
-    this.props.getDishes(id, locationName);
+    this.props.getDishes(id, this.props.currentLocationState);
   };
 
   onChange = (event) => {
@@ -34,7 +34,6 @@ export class DishPickerContainer extends Component {
   onSubmit = (event) => {
     event.preventDefault();
     const { date } = this.props;
-    const { locationName } = this.props.match.params;
 
     const { typeName, dishName } = this.state;
     const dish = {
@@ -42,7 +41,8 @@ export class DishPickerContainer extends Component {
       dish_name: dishName,
       date
     };
-    this.props.addMenuItem(dish, locationName);
+    // console.log('add dish', this.props.addMenuItem(dish))
+    this.props.addMenuItem(dish, this.props.currentLocationState);
     this.setState({
       dishName: ''
     });
@@ -51,17 +51,16 @@ export class DishPickerContainer extends Component {
 
   onDelete = (event) => {
     event.preventDefault();
-    const { locationName } = this.props.match.params;
     const dish = this.props.dishes.find(dish => {
       return dish.name === this.state.dishName
     })
-    this.props.deleteDish(dish.id, locationName)
+    //6
+    this.props.deleteDish(dish.id)
   }
 
   updateDisplay = (date) => {
-    const { locationName } = this.props.match.params;
 
-    this.props.getDayMenu(date, locationName);
+    this.props.getDayMenu(date, this.props.currentLocationState);
   };
 
   render() {
@@ -85,7 +84,8 @@ const mapStateToProps = (state) => {
   return {
     date: state.date.date,
     types: state.types,
-    dishes: state.dishes
+    dishes: state.dishes,
+    currentLocationState : state.currentLocation
   };
 };
 

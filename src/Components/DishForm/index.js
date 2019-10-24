@@ -13,7 +13,7 @@ export class DishFormContainer extends Component {
   }
 
   componentDidMount = () => {
-    this.props.getTypes(this.props.locationIdentifier)
+    this.props.getTypes()
   }
 
   onChange = (event) => {
@@ -26,7 +26,8 @@ export class DishFormContainer extends Component {
     event.preventDefault()
     const { typeId, dishName } = this.state
     const dish = { typeId, dishName }
-    await this.props.createDish(dish)
+    // 3
+    await this.props.createDish(dish, this.props.currentLocationState)
     await this.setState({
       // typeId: "",
       dishName: ""
@@ -42,7 +43,6 @@ export class DishFormContainer extends Component {
         <DishForm
           types={types}
           type={typeId}
-          locationIdentifier={this.props.locationId}
           dishName={dishName}
           onChange={onChange}
           onSubmit={onSubmit}
@@ -53,8 +53,10 @@ export class DishFormContainer extends Component {
 }
 
 const mapStateToProps = state => {
+  console.log('try again', state)
   return {
-    types: state.types
+    types: state.types,
+    currentLocationState : state.currentLocation
   }
 }
 

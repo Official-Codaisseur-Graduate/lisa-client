@@ -6,6 +6,7 @@ import date from './date';
 import menu from './menu';
 import weekMenu from './weekmenu';
 import locationReducer from './locationReducer'
+import currentLocation from './currentLocation'
 
 export default combineReducers({
 	type,
@@ -14,5 +15,6 @@ export default combineReducers({
 	date,
 	menu,
 	weekMenu,
-	locationReducer
+	locationReducer,
+	currentLocation
 });

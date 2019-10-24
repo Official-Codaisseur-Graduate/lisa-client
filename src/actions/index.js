@@ -4,6 +4,7 @@ export const ADD_DISH_SUCCESS = 'ADD_DISH_SUCCESS';
 export const DISH_UPDATE_SUCCESS = 'DISH_UPDATE_SUCCESS';
 export const DISH_DELETE_SUCCESS = 'DISH_DELETE_SUCCESS';
 export const DISH_FETCHED = 'DISH_FETCHED';
+export const SET_LOCATION_ID='SET_LOCATION_ID'
 
 // Date actions
 export const SET_DATE = 'SET_DATE';

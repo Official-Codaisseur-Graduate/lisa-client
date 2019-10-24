@@ -30,8 +30,7 @@ class Menu extends Component {
 							/>
 						</div>
 						<DishPicker/>
-						<DishForm locationIdentifier={this.props.locationIdentifier}/>
-						<DishForm locationIdentifier={this.props.locationIdentifier}/>
+						<DishForm />
 					</div>
 					<MenuDisplay/>
 				</div>

@@ -12,7 +12,7 @@ const WeekSelect = (props) => {
 		const date = moment(dates[0]).format('YYYY-MM-DD');
 
 		props.setWeekDate(date);
-		props.getWeekMenu(date);
+		props.getWeekMenu(date, props.currentLocationState);
 	};
 
 	return (
@@ -28,7 +28,9 @@ const WeekSelect = (props) => {
 
 const mapStateToProps = (state) => {
 	return {
-		weekDates: state.weekDates
+		weekDates: state.weekDates,
+		currentLocationState : state.currentLocation
+
 	};
 };
 

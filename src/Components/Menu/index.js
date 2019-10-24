@@ -8,27 +8,32 @@ import {getDayMenu} from '../../actions/menu';
 
 export class MenuContainer extends Component {
     componentDidMount() {
+        console.log('loc id params match', this.props.match.params.locationId)
 
     }
 
     changeDate = (currentDate) => {
-        const {locationId} = this.props.match.params;
 
         const date = moment(currentDate).format('YYYY-MM-DD');
         // Set date in Redux Store
         this.props.setDate(date);
 
         // Get-request to get all dishes for this date
-        this.props.getDayMenu(date, locationId);
+        this.props.getDayMenu(date, this.props.currentLocationState);
     };
 
     render() {
-        const {locationId} = this.props.match.params;
-        return <Menu changeDate={this.changeDate} locationIdentifier={locationId}/>;
+        return <Menu changeDate={this.changeDate} />;
     }
 }
 
-export default connect(null, {
+const mapStateToProps = (state) => {
+    return {
+        currentLocationState : state.currentLocation
+    };
+};
+
+export default connect(mapStateToProps, {
     setDate,
     getDayMenu
 })(MenuContainer);

@@ -6,6 +6,7 @@ import WeekSelect from '../WeekSelect';
 import { withRouter } from "react-router-dom";
 import { connect } from 'react-redux'
 import {getLocations} from '../../actions/locationActions'
+import {setLocationId} from '../../actions/currentLocation'
 
 class App extends React.Component {
 	componentDidMount() {
@@ -23,6 +24,7 @@ class App extends React.Component {
 		let locationId = event.target.options[selectedIndex].getAttribute('data-key');
 		this.setState({ location: locationId })
 		this.props.history.push(`/location/${locationId}`);
+		this.props.setLocationId(locationId)
 	}
 
 	render() {
@@ -61,6 +63,6 @@ const mapStateToProps = (state) => {
 	}
 }
 
-export default connect(mapStateToProps, {getLocations})(withRouter(App));
+export default connect(mapStateToProps, {getLocations, setLocationId})(withRouter(App));
 
 

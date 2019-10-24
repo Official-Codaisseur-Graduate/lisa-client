@@ -20,7 +20,8 @@ export class TypeFormContainer extends Component {
 
   onSubmit = async (event) => {
     event.preventDefault()
-    await this.props.createType(this.state)
+    const {locationId}=this.props.match.params
+    await this.props.createType(this.state, locationId)
     this.props.getTypes()
     this.setState({
       name: ''

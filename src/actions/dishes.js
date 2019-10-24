@@ -8,10 +8,9 @@ import {
 } from './'
 
 //loads dishes based on an event
-export const getDishes = (type, locationName) => (dispatch, getState) => {
-  //request(`${baseUrl}/location/${locationName}/types`)
+export const getDishes = (type, locationId) => (dispatch, getState) => {
 
-  request(`${baseUrl}/location/${locationName}/dishes?type=${type}`)
+  request(`${baseUrl}/location/${locationId}/dishes?type=${type}`)
     .then(result => {
       dispatch(dishesFetched(result.body));
     })
@@ -23,9 +22,9 @@ const dishesFetched = dishes => ({
   dishes
 });
 
-//loads one dish based on dish id 
-export const getDish = (id) => (dispatch) => {
-  request(`${baseUrl}/types/${id}`)
+//loads one dish based on dish id
+export const getDish = (id, locationId) => (dispatch) => {
+  request(`${baseUrl}/location/${locationId}/types/${id}`)
     .then(response => {
       dispatch(dishFetched(response.body))
     })
@@ -38,9 +37,9 @@ const dishFetched = dish => ({
 })
 
 // add a dish of a type
-export const createDish = (dish, locationName )=> dispatch => {
+export const createDish = (dish, locationId)=> dispatch => {
   request
-    .post(`${baseUrl}/location/${locationName}/dishes`)
+    .post(`${baseUrl}/location/${locationId}/dishes`)
     .send({ dish })
     .then(res => {
       dispatch(addDishSuccess(res.body));
@@ -56,9 +55,9 @@ const addDishSuccess = dish => ({
 });
 
 // delete dish
-export const deleteDish = (id, locationName) => (dispatch) => {
+export const deleteDish = (id) => (dispatch) => {
   request
-    .delete(`${baseUrl}/location/${locationName}/dishes/${id}`)
+    .delete(`${baseUrl}/dishes/${id}`)
     .catch(console.error)
 }
 
