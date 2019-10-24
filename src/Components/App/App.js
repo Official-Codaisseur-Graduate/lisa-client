@@ -11,6 +11,7 @@ import {setLocationId} from '../../actions/currentLocation'
 class App extends React.Component {
 	componentDidMount() {
 		this.props.getLocations()
+		console.log('get locations', this.props.getLocations() )
 		console.log('loca state', this.props.locationState)
 	}
 
@@ -40,8 +41,8 @@ class App extends React.Component {
 
 						{this.props.locationState.map(location =>
 
-							<option key={location.id} data-key={location.id}  value={location.location_name}>
-								{location.location_name}
+							<option key={location.id} data-key={location.id}  value={location.name}>
+								{location.name}
 							</option>)}
 
 					</select>
