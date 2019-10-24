@@ -16,11 +16,13 @@ export class DishPickerContainer extends Component {
 
   onChangeType = (id) => {
     const { types } = this.props;
+    const { locationName } = this.props.match.params;
+
     const selectedType = types.find((type) => type.id == id);
     this.setState({
       typeName: selectedType.name
     });
-    this.props.getDishes(id);
+    this.props.getDishes(id, locationName);
   };
 
   onChange = (event) => {
@@ -32,13 +34,15 @@ export class DishPickerContainer extends Component {
   onSubmit = (event) => {
     event.preventDefault();
     const { date } = this.props;
+    const { locationName } = this.props.match.params;
+
     const { typeName, dishName } = this.state;
     const dish = {
       type_name: typeName,
       dish_name: dishName,
       date
     };
-    this.props.addMenuItem(dish);
+    this.props.addMenuItem(dish, locationName);
     this.setState({
       dishName: ''
     });
@@ -47,14 +51,17 @@ export class DishPickerContainer extends Component {
 
   onDelete = (event) => {
     event.preventDefault();
+    const { locationName } = this.props.match.params;
     const dish = this.props.dishes.find(dish => {
       return dish.name === this.state.dishName
     })
-    this.props.deleteDish(dish.id)
+    this.props.deleteDish(dish.id, locationName)
   }
 
   updateDisplay = (date) => {
-    this.props.getDayMenu(date);
+    const { locationName } = this.props.match.params;
+
+    this.props.getDayMenu(date, locationName);
   };
 
   render() {

@@ -13,7 +13,7 @@ export class DishFormContainer extends Component {
   }
 
   componentDidMount = () => {
-    this.props.getTypes()
+    this.props.getTypes(this.props.locationIdentifier)
   }
 
   onChange = (event) => {
@@ -42,6 +42,7 @@ export class DishFormContainer extends Component {
         <DishForm
           types={types}
           type={typeId}
+          locationIdentifier={this.props.locationId}
           dishName={dishName}
           onChange={onChange}
           onSubmit={onSubmit}

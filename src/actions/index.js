@@ -14,3 +14,5 @@ export const SET_WEEK_MENU = 'SET_WEEK_MENU';
 
 //weekDate actions
 export const SET_WEEK_DATE = 'SET_WEEK_DATE';
+
+export const GET_LOCATIONS='GET_LOCATIONSs'

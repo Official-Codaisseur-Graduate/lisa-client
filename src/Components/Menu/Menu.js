@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './Menu.css';
 import Calendar from 'react-calendar';
 
@@ -8,29 +8,36 @@ import TypeForm from '../TypeForm';
 import MenuDisplay from '../MenuDisplay';
 import ExportToPdf from '../ExportToPdf';
 
-function Menu(props) {
-	return (
-		<div className="Menu">
-			{/* <div className="menuBar">
+class Menu extends Component {
+
+	componentDidMount() {
+	}
+
+	render() {
+		return (
+			<div className="Menu">
+				{/* <div className="menuBar">
         <h1 className="appHeader">Vitalis Menu Editor</h1>
         <ExportToPdf />
       </div> */}
-			<div className="menuEditor">
-				<div className="sideBar">
-					<div className="Calendar">
-						<Calendar
-							locale="nl-NL"
-							onClickDay={(date) =>
-								props.changeDate(date)}
-						/>
+				<div className="menuEditor">
+					<div className="sideBar">
+						<div className="Calendar">
+							<Calendar
+								locale="nl-NL"
+								onClickDay={(date) =>
+									this.props.changeDate(date)}
+							/>
+						</div>
+						<DishPicker/>
+						<DishForm locationIdentifier={this.props.locationIdentifier}/>
+						<DishForm locationIdentifier={this.props.locationIdentifier}/>
 					</div>
-					<DishPicker />
-					<DishForm />
+					<MenuDisplay/>
 				</div>
-				<MenuDisplay />
 			</div>
-		</div>
-	);
+		);
+	}
 }
 
-export default Menu;
+export default (Menu)

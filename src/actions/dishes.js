@@ -8,8 +8,10 @@ import {
 } from './'
 
 //loads dishes based on an event
-export const getDishes = (type) => (dispatch, getState) => {
-  request(`${baseUrl}/dishes?type=${type}`)
+export const getDishes = (type, locationName) => (dispatch, getState) => {
+  //request(`${baseUrl}/location/${locationName}/types`)
+
+  request(`${baseUrl}/location/${locationName}/dishes?type=${type}`)
     .then(result => {
       dispatch(dishesFetched(result.body));
     })
@@ -36,9 +38,9 @@ const dishFetched = dish => ({
 })
 
 // add a dish of a type
-export const createDish = dish => dispatch => {
+export const createDish = (dish, locationName )=> dispatch => {
   request
-    .post(`${baseUrl}/dishes`)
+    .post(`${baseUrl}/location/${locationName}/dishes`)
     .send({ dish })
     .then(res => {
       dispatch(addDishSuccess(res.body));
@@ -54,9 +56,9 @@ const addDishSuccess = dish => ({
 });
 
 // delete dish
-export const deleteDish = (id) => (dispatch) => {
+export const deleteDish = (id, locationName) => (dispatch) => {
   request
-    .delete(`${baseUrl}/dishes/${id}`)
+    .delete(`${baseUrl}/location/${locationName}/dishes/${id}`)
     .catch(console.error)
 }
 

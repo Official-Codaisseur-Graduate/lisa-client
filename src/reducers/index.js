@@ -5,6 +5,7 @@ import dishes from './dishes';
 import date from './date';
 import menu from './menu';
 import weekMenu from './weekmenu';
+import locationReducer from './locationReducer'
 
 export default combineReducers({
 	type,
@@ -12,5 +13,6 @@ export default combineReducers({
 	dishes,
 	date,
 	menu,
-	weekMenu
+	weekMenu,
+	locationReducer
 });

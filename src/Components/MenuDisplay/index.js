@@ -8,9 +8,11 @@ import { deleteMenuItem } from '../../actions/menu'
 export class MenuDisplayContainer extends Component {
 
   deleteItem = (event) => {
+    const { locationName } = this.props.match.params;
+
     const id = event.target.value
     const { date } = this.props.date
-    this.props.deleteMenuItem(id, date)
+    this.props.deleteMenuItem(id, date, locationName)
   }
 
   render() {

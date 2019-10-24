@@ -27,8 +27,11 @@ const typesFetched = types => ({
     types
 })
 
-export const getTypes = () => (dispatch) => {
-    request(`${baseUrl}/types`)
+export const getTypes = (locationId) => (dispatch) => {
+    // <Link to={`/location/${this.state.location}`}><button>Hoofdpagina</button></Link>
+
+    request(`${baseUrl}/location/${locationId}/types`)
+    //hmmm, should i probably send it with send OR can i just take it from the endpoint-just take it, i guess
         .then(response => {
             dispatch(typesFetched(response.body))
         })
@@ -41,6 +44,7 @@ const createTypeSuccess = dishType => ({
     dishType
 })
 
+//i will now work on this
 export const createType = (type) => (dispatch) => {
     request
         .post(`${baseUrl}/types`)

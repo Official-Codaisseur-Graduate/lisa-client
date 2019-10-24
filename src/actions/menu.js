@@ -9,23 +9,25 @@ export const setDayMenu = (menu) => {
   };
 };
 
-export const getDayMenu = (date) => (dispatch) => {
+export const getDayMenu = (date, locationName) => (dispatch) => {
   request
-    .get(`${baseUrl}/menus/?date=${date}`)
+  //add location
+    .get(`${baseUrl}/location/${locationName}/menus/?date=${date}`)
     .send(date)
     .then((res) => {
       dispatch(setDayMenu(res.body));
     });
 };
 
-export const addMenuItem = (dish) => (dispatch) => {
-  request.post(`${baseUrl}/menus`).send({ dish }).then((res) => {
+export const addMenuItem = (dish, locationName) => (dispatch) => {
+
+  request.post(`${baseUrl}/location/${locationName}/menus`).send({ dish }).then((res) => {
     dispatch(getDayMenu(dish.date));
   });
 };
 
-export const deleteMenuItem = (id, date) => (dispatch) => {
-  request.delete(`${baseUrl}/menus/${id}`)
+export const deleteMenuItem = (id, date, locationName) => (dispatch) => {
+  request.delete(`${baseUrl}/location/${locationName}/menus/${id}`)
     .then(() => {
       return dispatch(getDayMenu(date));
     });
