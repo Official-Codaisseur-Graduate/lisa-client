@@ -29,9 +29,11 @@ We went to Eindhoven and had a meeting with the product owner and the chef to di
 1) First, make sure to set up the backend [server](https://github.com/Official-Codaisseur-Graduate/lisa-server)
 
 2) Git clone the [CLIENT](https://github.com/Official-Codaisseur-Graduate/lisa-client)
-* `git clone`
-* `git checkout origin development`
-* `npm install`
-* `npm run start`
+    ```
+    $ git clone
+    $ git checkout origin development
+    $ npm install
+    $ npm run start
+    ```
 
-3) Add some mock data on any day. First, add dishes by type in the lower dropdown menu with the white background. Then, select a date and use the upper form to add these dishes to that day. If your added dishes don't appear in the dropdown menu, you need to refresh the page.
+1) Add some mock data on any day. First, add dishes by type in the lower dropdown menu with the white background. Then, select a date and use the upper form to add these dishes to that day. If your added dishes don't appear in the dropdown menu, you need to refresh the page.
