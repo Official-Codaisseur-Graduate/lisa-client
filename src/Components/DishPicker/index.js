@@ -18,7 +18,7 @@ export class DishPickerContainer extends Component {
     //console.log('onchange', this.props.getDishes(id, this.props.currentLocationState))
     const { types } = this.props;
 
-    const selectedType = types.find((type) => type.id == id);
+    const selectedType = types.find((type) => type.id === parseInt(id));
     this.setState({
       typeName: selectedType.name
     });
