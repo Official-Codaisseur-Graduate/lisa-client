@@ -33,9 +33,9 @@ We went to Eindhoven and had a meeting with the product owner and the chef to di
     $ git checkout development
     $ npm install
     ```
-    Make sure to use your local database in /src/constants.js before running
+    Make sure to correct the database URL to use your local database in /src/constants.js before running:
     ```
     $ npm run start
     ```
 
-3) Add some mock data on any day. First, add dishes by type in the lower dropdown menu with the white background. Then, select a date and use the upper form to add these dishes to that day. If your added dishes don't appear in the dropdown menu, you need to refresh the page.
+3) Add some mock data on any day. First, select the location where you want to add a dish. Then add dishes by type in the lower dropdown menu with the white background. Now you can select a date and use the upper form to add these dishes to that day. If your added dishes don't appear in the dropdown menu, you need to refresh the page.
