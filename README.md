@@ -1,5 +1,3 @@
-## PLEASE READ [INITIAL SETUP](https://github.com/Official-Codaisseur-Graduate/lisa-client/blob/master/InitialSetup.md) FIRST
-
 # Introduction 
 This is part of our week-long graduation project called LISA that we did for Vitalis (de Wilgenhof), a retirement home in Eindhoven. This project contains the Vitalis Menu Editor, the staff UI-part of the project. Project LISA also includes a Google Assistant app that reads the menu to residents. This UI was requested by the product owner to make it easier for the chef to make and edit his weekly menu, while at the same time adding to the database that our Google Assistant app reads from. 
 
@@ -36,4 +34,4 @@ We went to Eindhoven and had a meeting with the product owner and the chef to di
     $ npm run start
     ```
 
-1) Add some mock data on any day. First, add dishes by type in the lower dropdown menu with the white background. Then, select a date and use the upper form to add these dishes to that day. If your added dishes don't appear in the dropdown menu, you need to refresh the page.
+3) Add some mock data on any day. First, add dishes by type in the lower dropdown menu with the white background. Then, select a date and use the upper form to add these dishes to that day. If your added dishes don't appear in the dropdown menu, you need to refresh the page.
