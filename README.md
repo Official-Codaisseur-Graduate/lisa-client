@@ -32,6 +32,9 @@ We went to Eindhoven and had a meeting with the product owner and the chef to di
     $ cd ./lisa-client
     $ git checkout development
     $ npm install
+    ```
+    Make sure to use your local database in /src/constants.js before running
+    ```
     $ npm run start
     ```
 
