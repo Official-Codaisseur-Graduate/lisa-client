@@ -29,6 +29,7 @@ We went to Eindhoven and had a meeting with the product owner and the chef to di
 2) Git clone the [CLIENT](https://github.com/Official-Codaisseur-Graduate/lisa-client)
     ```
     $ git clone
+    $ cd ./lisa-client
     $ git checkout development
     $ npm install
     $ npm run start
