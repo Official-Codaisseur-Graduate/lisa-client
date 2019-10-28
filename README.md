@@ -25,4 +25,13 @@ The accompanying Google Assistant app uses Dialogflow for user interaction, this
 ## Product Owner/Requests
 We went to Eindhoven and had a meeting with the product owner and the chef to discuss what their UI should look like. Since the time we had to work on this project was very limited and we wanted to present a working product, we did not get to implement all the functionality that was discussed. Some features that can be added are added as Todos in the project todos under the following link: https://github.com/Official-Codaisseur-Graduate/lisa-client/projects/1
 
+# Installation
+1) First, make sure to set up the backend [server](https://github.com/Official-Codaisseur-Graduate/lisa-server)
 
+2) Git clone the [CLIENT](https://github.com/Official-Codaisseur-Graduate/lisa-client)
+* `git clone`
+* `git checkout origin development`
+* `npm install`
+* `npm run start`
+
+3) Add some mock data on any day. First, add dishes by type in the lower dropdown menu with the white background. Then, select a date and use the upper form to add these dishes to that day. If your added dishes don't appear in the dropdown menu, you need to refresh the page.
