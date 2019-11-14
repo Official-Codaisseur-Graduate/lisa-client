@@ -1,20 +1,21 @@
-import { 
-  DISHES_FETCHED, 
-  ADD_DISH_SUCCESS, 
-  DISH_DELETE_SUCCESS } from '../actions'
+import {
+  DISHES_FETCHED,
+  ADD_DISH_SUCCESS,
+  DISH_DELETE_SUCCESS
+} from "../actions";
 
-export default function (state = null, action) {
-  switch(action.type) {
+export default function(state = null, action) {
+  switch (action.type) {
     case DISHES_FETCHED:
       return action.dishes;
     case ADD_DISH_SUCCESS:
-      return state 
+      return action.dish.dishes;
     case DISH_DELETE_SUCCESS:
-        return state.filter(dish => dish.id !== action.id)
+      return state.filter(dish => dish.id !== action.id);
     default:
-      return state
+      return state;
   }
 }
 
-export const DISH_UPDATE_SUCCESS = "DISH_UPDATE_SUCCESS"
-export const DISH_FETCHED = "DISH_FETCHED"
+export const DISH_UPDATE_SUCCESS = "DISH_UPDATE_SUCCESS";
+export const DISH_FETCHED = "DISH_FETCHED";

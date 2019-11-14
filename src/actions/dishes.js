@@ -5,11 +5,10 @@ import {
   ADD_DISH_SUCCESS,
   DISH_UPDATE_SUCCESS,
   DISH_FETCHED
-} from './'
+} from "./";
 
 //loads dishes based on an event
 export const getDishes = (type, locationId) => (dispatch, getState) => {
-
   request(`${baseUrl}/location/${locationId}/dishes?type=${type}`)
     .then(result => {
       dispatch(dishesFetched(result.body));
@@ -23,27 +22,25 @@ const dishesFetched = dishes => ({
 });
 
 //loads one dish based on dish id
-export const getDish = (id, locationId) => (dispatch) => {
+export const getDish = (id, locationId) => dispatch => {
   request(`${baseUrl}/location/${locationId}/types/${id}`)
     .then(response => {
-      dispatch(dishFetched(response.body))
+      dispatch(dishFetched(response.body));
     })
-    .catch(console.error)
-}
+    .catch(console.error);
+};
 
 const dishFetched = dish => ({
   type: DISH_FETCHED,
   dish
-})
+});
 
 // add a dish of a type
-export const createDish = (dish, locationId)=> dispatch => {
+export const createDish = (dish, locationId) => dispatch => {
   request
     .post(`${baseUrl}/location/${locationId}/dishes`)
     .send({ dish })
-    .then(res => {
-      dispatch(addDishSuccess(res.body));
-    })
+    .then(res => dispatch(addDishSuccess(res.body)))
     .catch(err => {
       console.error(err);
     });
@@ -51,28 +48,26 @@ export const createDish = (dish, locationId)=> dispatch => {
 
 const addDishSuccess = dish => ({
   type: ADD_DISH_SUCCESS,
-  payload: dish
+  dish
 });
 
 // delete dish
-export const deleteDish = (id) => (dispatch) => {
-  request
-    .delete(`${baseUrl}/dishes/${id}`)
-    .catch(console.error)
-}
+export const deleteDish = id => dispatch => {
+  request.delete(`${baseUrl}/dishes/${id}`).catch(console.error);
+};
 
 //update dish
 const dishUpdateSuccess = dish => ({
   type: DISH_UPDATE_SUCCESS,
   dish
-})
+});
 
-export const updateDish = (id, data) => (dispatch) => {
+export const updateDish = (id, data) => dispatch => {
   request
     .put(`${baseUrl}/dishes/${id}`)
     .send(data)
     .then(response => {
-      dispatch(dishUpdateSuccess(response.body))
+      dispatch(dishUpdateSuccess(response.body));
     })
-    .catch(console.error)
-}
+    .catch(console.error);
+};
