@@ -53,7 +53,9 @@ const addDishSuccess = dish => ({
 
 // delete dish
 export const deleteDish = id => dispatch => {
-  request.delete(`${baseUrl}/dishes/${id}`).catch(console.error);
+  request
+    .delete(`${baseUrl}/dishes/${id}`)
+    .catch(console.error);
 };
 
 //update dish
