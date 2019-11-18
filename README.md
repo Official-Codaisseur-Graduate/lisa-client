@@ -1,10 +1,21 @@
 # Introduction 
 This is part of our week-long graduation project called LISA that we did for Vitalis (de Wilgenhof), a retirement home in Eindhoven. This project contains the Vitalis Menu Editor, the staff UI-part of the project. Project LISA also includes a Google Assistant app that reads the menu to residents. This UI was requested by the product owner to make it easier for the chef to make and edit his weekly menu, while at the same time adding to the database that our Google Assistant app reads from. 
 
-You can find the repository for our server [here](https://github.com/Official-Codaisseur-Graduate/lisa-server).
+## Contents of this ReadMe-file
+- Introduction
+- Repositories in the LISA-project
+- Overview
+- Product Owner/Requests
+- Installation Guide
+- Suggestions
 
-You can find the repository for our Dialogflow [here](https://github.com/Official-Codaisseur-Graduate/lisa-client-dialogflow).
-NOTE: Read the Docs for set-up and the latest status of the code - make sure to use the correct branch (development or any open branches that hasn’t been merged into development yet). Only merge into the master branch if all the codes in development are working AND you have already checked with Rein. 
+## Repositories in the LISA-project
+NOTE: Read the Docs for set-up and the latest status of the code - make sure to use the correct branch (development or any open branches that hasn’t been merged into development yet). Only merge into the master branch if all the codes in development are working AND you have already checked with Rein. <br>
+<br>
+- [LISA-server](https://github.com/Official-Codaisseur-Graduate/lisa-server)
+- LISA-client- you are here!
+- [LISA Dialogflow](https://github.com/Official-Codaisseur-Graduate/lisa-client-dialogflow)
+
 
 # Overview
 
@@ -42,5 +53,10 @@ We went to Eindhoven and had a meeting with the product owner and the chef to di
     ```
     $ npm run start
     ```
+3) Go to *constants.js* and change the url to your local server.
 
-3) Add some mock data on a specific day ON YOUR LOCAL SERVER. First, select the location where you want to add a dish. Then add dishes by type in the lower dropdown menu with the white background. Now you can select a date and use the upper form to add these dishes to that day. 
+4) Add some mock data on a specific day ON YOUR LOCAL SERVER. First, select the location where you want to add a dish. Then add dishes by type in the lower dropdown menu with the white background. Now you can select a date and use the upper form to add these dishes to that day. 
+
+## Suggestions
+- Create a fancy homepage
+    - if click on the button *homepage*, you go back to the homepage. Reset the location drop down menu to default "--selecteer een locatie--"
