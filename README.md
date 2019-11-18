@@ -3,6 +3,9 @@ This is part of our week-long graduation project called LISA that we did for Vit
 
 You can find the repository for our server [here](https://github.com/Official-Codaisseur-Graduate/lisa-server).
 
+You can find the repository for our Dialogflow [here](https://github.com/Official-Codaisseur-Graduate/lisa-client-dialogflow).
+NOTE: Read the Docs for set-up and the latest status of the code - make sure to use the correct branch (development or any open branches that hasn’t been merged into development yet). Only merge into the master branch if all the codes in development are working AND you have already checked with Rein. 
+
 # Overview
 
 The main functionality is: 
@@ -19,6 +22,8 @@ It is connected to the Database on localhost:5000. The database uses a REST API 
 The accompanying Google Assistant app uses Dialogflow for user interaction, this is connected to our back end with webhooks.
 
 (update Class 30) Added a location selection element, where the user can choose the location from a drop down menu and add and remove dishes for a specific location by sending the location id to the database.
+
+(update Class 31) We mainly fixed the code to make the app working in sync with the backend. The menu gets updated when changing between locations. The dishes get updated automatically after the user adds new dishes. The chosen dishes will show up on the menu. The deleted button on the rendered menu also works now. 
 
 ## Product Owner/Requests
 We went to Eindhoven and had a meeting with the product owner and the chef to discuss what their UI should look like. Since the time we had to work on this project was very limited and we wanted to present a working product, we did not get to implement all the functionality that was discussed. Some features that can be added are added as Todos in the project todos under the following link: https://github.com/Official-Codaisseur-Graduate/lisa-client/projects/1
@@ -38,4 +43,4 @@ We went to Eindhoven and had a meeting with the product owner and the chef to di
     $ npm run start
     ```
 
-3) Add some mock data on any day. First, select the location where you want to add a dish. Then add dishes by type in the lower dropdown menu with the white background. Now you can select a date and use the upper form to add these dishes to that day. If your added dishes don't appear in the dropdown menu, you need to refresh the page.
+3) Add some mock data on a specific day ON YOUR LOCAL SERVER. First, select the location where you want to add a dish. Then add dishes by type in the lower dropdown menu with the white background. Now you can select a date and use the upper form to add these dishes to that day. 
