@@ -13,7 +13,8 @@ export class MenuDisplayContainer extends Component {
   };
 
   render() {
-    const { menu, date } = this.props;
+    const { menu, date, types } = this.props;
+    
     return (
       <div className="MenuDisplay">
         {!date ? (
@@ -21,7 +22,7 @@ export class MenuDisplayContainer extends Component {
         ) : !menu || menu.length === 0 ? (
           "Voor deze datum is nog geen menu ingevoerd."
         ) : (
-          <MenuDisplay menu={menu} deleteItem={this.deleteItem} />
+          <MenuDisplay menu={menu} deleteItem={this.deleteItem} types={types}/>
         )}
       </div>
     );
@@ -31,7 +32,8 @@ export class MenuDisplayContainer extends Component {
 const mapStateToProps = state => {
   return {
     menu: state.menu,
-    date: state.date
+    date: state.date,
+    types: state.types
   };
 };
 

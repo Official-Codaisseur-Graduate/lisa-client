@@ -26,7 +26,7 @@ function DishForm(props) {
           <input className="dishFormName" type="text" onChange={onChange} required={true} value={dishName} name="dishName" />
         </label>
         <br />
-        <input type="submit" value="Voeg gerecht toe" />
+        <input type="submit" className='btn btn-outline-info' value="Voeg gerecht toe" />
       </form>  
     </div>
   );

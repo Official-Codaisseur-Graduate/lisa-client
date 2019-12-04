@@ -18,7 +18,7 @@
 .sideBar {
   height: 90vh;
   width: 40vh;
-  background-color: lightgrey;
+  /* background-color: lightgrey; */
 }
 
 .Calendar {
@@ -33,7 +33,13 @@
 }
 
 .menuOption {
-  padding: 7vw;
+  padding-top: 2vw;
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+
+.menuOption h5 {
+  margin: 1.5rem auto;
 }
 
 .menuEditor {
@@ -43,15 +49,17 @@
 .MenuDisplay {
   margin: auto;
   height: 90vh;
-  overflow: scroll;
+  /* overflow: scroll; */
 }
 
 .menuItem p {
   margin: 0 auto;
 }
+
 .menuItem {
   margin: 0 auto;
   display: flex;
+  align-items: center;
 }
 
 .DishForm,
@@ -60,6 +68,14 @@
   margin: 1vh 2vh 2vh 2vh;
   display: flex;
   flex-direction: column;
+}
+
+.DishPicker label {
+  font-size: 16px;
+}
+
+.DishForm label {
+  font-size: 16px;
 }
 
 .DishPicker {
@@ -79,7 +95,10 @@
 .typeFormName {
   margin: 1vh auto;
   width: 30vh;
-  height: 2.5vh;
+  height: 40px;
+  border-radius: 0.25rem;
+  background-color: white;
+  font-size: 16px;
 }
 
 .TypeForm {
