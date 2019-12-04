@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import "./Menu.css";
 import Calendar from "react-calendar";
-
 import DishPicker from "../DishPicker";
-import DishForm from "../CreateDishForm";
 //import TypeForm from '../TypeForm';
 import MenuDisplay from "../MenuDisplay";
 //import ExportToPdf from '../ExportToPdf';
@@ -27,7 +25,6 @@ class Menu extends Component {
               />
             </div>
             <DishPicker />
-            <DishForm />
           </div>
           <MenuDisplay />
         </div>
