@@ -1,0 +1,11 @@
+.btn-show-me {
+  color: white;
+  background-color: transparent;
+  border: white 1px solid;
+}
+
+.btn-show-me:hover {
+  color: black;
+  background-color: white;
+  border: white 1px solid;
+}
