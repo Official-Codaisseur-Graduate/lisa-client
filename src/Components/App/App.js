@@ -8,6 +8,8 @@ import { connect } from "react-redux";
 import { getLocations } from "../../actions/locationActions";
 import { setLocationId } from "../../actions/currentLocation";
 import { getDayMenu } from "../../actions/menu";
+import HomeContainer from "../Home";
+
 class App extends React.Component {
   componentDidMount() {
     this.props.getLocations();
@@ -59,6 +61,8 @@ class App extends React.Component {
         </header>
         <Route exact path={`/location/:locationId`} component={Menu} />
         <Route path="/week" component={WeekSelect} />
+        {/* home container test route */}
+        <Route exact path="/" component={HomeContainer} />
       </div>
     );
   }
