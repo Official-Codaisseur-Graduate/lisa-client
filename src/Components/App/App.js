@@ -3,6 +3,7 @@ import "./App.css";
 import { Route, Link } from "react-router-dom";
 import Menu from "../Menu";
 import WeekSelect from "../WeekSelect";
+import DishCreateFormContainer from "../CreateDishForm/index"
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { getLocations } from "../../actions/locationActions";
@@ -59,6 +60,7 @@ class App extends React.Component {
         </header>
         <Route exact path={`/location/:locationId`} component={Menu} />
         <Route path="/week" component={WeekSelect} />
+        <Route exact path={`/location/:locationId/createDish`} component={DishCreateFormContainer}/>
       </div>
     );
   }

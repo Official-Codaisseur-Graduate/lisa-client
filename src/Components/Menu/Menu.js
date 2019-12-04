@@ -3,7 +3,7 @@ import "./Menu.css";
 import Calendar from "react-calendar";
 
 import DishPicker from "../DishPicker";
-import DishForm from "../DishForm";
+import DishForm from "../CreateDishForm";
 //import TypeForm from '../TypeForm';
 import MenuDisplay from "../MenuDisplay";
 //import ExportToPdf from '../ExportToPdf';
