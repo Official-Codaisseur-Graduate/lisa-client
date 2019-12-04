@@ -1,12 +1,9 @@
 import React, { Component } from "react";
 import "./Menu.css";
 import Calendar from "react-calendar";
-
 import DishPicker from "../DishPicker";
 import DishForm from "../DishForm";
-//import TypeForm from '../TypeForm';
 import MenuDisplay from "../MenuDisplay";
-//import ExportToPdf from '../ExportToPdf';
 
 class Menu extends Component {
   componentDidMount() {}
@@ -14,10 +11,6 @@ class Menu extends Component {
   render() {
     return (
       <div className="Menu">
-        {/* <div className="menuBar">
-        <h1 className="appHeader">Vitalis Menu Editor</h1>
-        <ExportToPdf />
-      </div> */}
         <div className="menuEditor">
           <div className="sideBar">
             <div className="Calendar">
@@ -27,7 +20,7 @@ class Menu extends Component {
               />
             </div>
             <DishPicker />
-            <DishForm />
+            <DishForm /> 
           </div>
           <MenuDisplay />
         </div>

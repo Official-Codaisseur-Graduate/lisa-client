@@ -40,8 +40,10 @@ function DishForm(props) {
           />
         </label>
         <br />
-        <input type="submit" value="Voeg gerecht toe" />
-      </form>
+
+        <input type="submit" className='btn btn-outline-info' value="Voeg gerecht toe" />
+      </form>  
+
     </div>
   );
 }
