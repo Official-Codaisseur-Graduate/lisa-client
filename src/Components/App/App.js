@@ -12,8 +12,8 @@ import { getDayMenu } from "../../actions/menu";
 class App extends React.Component {
   componentDidMount() {
     this.props.getLocations();
-    console.log("get locations", this.props.getLocations());
-    console.log("loca state", this.props.locationState);
+    //console.log("get locations", this.props.getLocations());
+    //console.log("loca state", this.props.locationState);
   }
 
   state = {
@@ -67,8 +67,7 @@ class App extends React.Component {
 }
 
 const mapStateToProps = state => {
-  console.log("location state in cont", state);
-
+  //console.log("location state in cont", state);
   return {
     locationState: state.locationReducer,
     date: state.date

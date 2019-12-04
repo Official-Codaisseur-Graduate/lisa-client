@@ -11,7 +11,7 @@ export const setDayMenu = menu => {
 
 // 5
 export const getDayMenu = (date, locationId) => dispatch => {
-  console.log("date here", date);
+  //console.log("date here", date);
   request
     //add location
     .get(`${baseUrl}/location/${locationId}/menus/?date=${date}`)
@@ -22,7 +22,7 @@ export const getDayMenu = (date, locationId) => dispatch => {
 };
 
 export const addMenuItem = (dish, locationId) => dispatch => {
-  console.log("dish date", dish);
+  //console.log("dish date", dish);
 
   request
     .post(`${baseUrl}/location/${locationId}/menus`)
@@ -38,7 +38,7 @@ export const deleteMenuItemSuccess = itemId => {
   };
 };
 export const deleteMenuItem = (id, date) => dispatch => {
-  console.log("check id and date", id, date);
+  //console.log("check id and date", id, date);
   request
     .delete(`${baseUrl}/menus/${id}`)
     .then(() => dispatch(deleteMenuItemSuccess(id)));

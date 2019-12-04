@@ -8,8 +8,7 @@ import {getDayMenu} from '../../actions/menu';
 
 export class MenuContainer extends Component {
     componentDidMount() {
-        console.log('loc id params match', this.props.match.params.locationId)
-
+        //console.log('loc id params match', this.props.match.params.locationId)
     }
 
     changeDate = (currentDate) => {
