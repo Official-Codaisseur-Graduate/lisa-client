@@ -17,7 +17,7 @@ function DishPicker(props) {
   })
   return (
     <div className="DishPicker">
-      <form onSubmit={onSubmit}>
+      <form className='form-group' onSubmit={onSubmit}>
         <label>
           Type gerecht:
           <br />
@@ -26,7 +26,7 @@ function DishPicker(props) {
             const id = e.target.value;
             onChangeType(id);
           }}>
-            <option value="" defaultValue="">Kies een type</option>
+            <option value="" defaultValue=''>Kies een type</option>
             {typeOptions}
           </select>
         </label>
@@ -35,20 +35,20 @@ function DishPicker(props) {
           Gerecht:
           <br />
           <select className="dishPickerName" name="dishName" required={true} onChange={onChange} value={dishName}>
-            <option value="" defaultValue="">Kies een gerecht</option>
+            <option value="" defaultValue=''>Kies een gerecht</option>
             {dishOptions}
           </select>
         </label>
         <br />
         {date ?
-            <input type="submit" value="Voeg gerecht toe" />
+            <input type="submit" className='btn btn-outline-info' value="Voeg gerecht toe" />
             :
             <React.Fragment>
             <span>Selecteer eerst een datum</span>
-            <input type="submit" value="Voeg gerecht toe" disabled />
+            <input type="submit" className='btn btn-outline-info' value="Voeg gerecht toe" disabled />
             </React.Fragment>
         }
-        <button onClick={props.onDelete} style={{ color: 'red' }}>X</button>
+        {/*  <button onClick={props.onDelete} style={{ color: 'red' }}>X</button>*/}
       </form>
     </div>
   );

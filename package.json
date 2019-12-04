@@ -4,9 +4,11 @@
   "private": true,
   "dependencies": {
     "@react-pdf/renderer": "^1.6.6",
+    "bootstrap": "^4.4.1",
     "cors": "^2.8.5",
     "moment": "^2.24.0",
     "react": "^16.8.6",
+    "react-bootstrap": "^1.0.0-beta.16",
     "react-calendar": "^2.19.0",
     "react-day-picker": "^7.3.2",
     "react-dom": "^16.8.6",
