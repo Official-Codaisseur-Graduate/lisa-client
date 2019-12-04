@@ -5,6 +5,19 @@ import './MenuDisplay.css';
 function MenuDisplay(props) {
   const { menu, deleteItem } = props
 
+  const toTypeId = {
+    "Voorgerecht 1": 1,
+    "Hoofdgerecht 1": 2,
+    "Voorgerecht 2": 3,
+    "Hoofdgerecht 2": 4,
+    "Saus 1": 5,
+    "Saus 2": 6,
+    "Bijgerecht 1": 7,
+    "Bijgerecht 2": 8,
+    "Nagerecht 1": 9,
+    "Nagerecht 2": 10
+  }
+
   const groupedMenuItems = menu
     && menu
       .sort((a, b) => (a.id > b.id) ? 1 : -1)
@@ -28,8 +41,9 @@ function MenuDisplay(props) {
       )
     })
 
+
     return (
-      <div key={type} className="menuItemType">
+      <div key={toTypeId[type]} className="menuItemType">
         <h5>{type}</h5>
         {menuItems}
       </div>
@@ -48,20 +62,28 @@ function MenuDisplay(props) {
     })
 
     return (
-      <div key={type} className="menuItemType">
+      <div key={toTypeId[type]} className="menuItemType">
         <h5>{type}</h5>
         {menuItems}
       </div>
     )
   })
 
+  const sort = (array) => {
+    array.sort(function(a, b){
+      return a.key - b.key
+    })
+    return array
+  } 
+
   return (
-    <div>
+      <div>
       <h2 className='menu-title'>Menu van de Dag </h2>
+      
       {menuItemsByTypeOne && menuItemsByTypeTwo
         ? <div className="menuOptions">
-          <div className="menuOption">{menuItemsByTypeOne}</div>
-          <div className="menuOption">{menuItemsByTypeTwo}</div>
+          <div className="menuOption">{sort(menuItemsByTypeOne)}</div>
+          <div className="menuOption">{sort(menuItemsByTypeTwo)}</div>
         </div>
         : "Aan het laden..."}
     </div>
