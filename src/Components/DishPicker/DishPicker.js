@@ -2,7 +2,7 @@ import React from 'react'
 
 function DishPicker(props) {
   const { dishes, types, onChangeType, onChange, onSubmit, dishName, date } = props
-  console.log('DishPicker Date:', date)
+  //console.log('DishPicker Date:', date)
   const typeOptions = types && types.map(type => {
     const { name, id } = type
     return (

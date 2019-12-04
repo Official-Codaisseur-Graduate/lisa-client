@@ -1,7 +1,7 @@
 import React from "react";
 
 function DishForm(props) {
-  console.log("DishForm(props)", props);
+  //console.log('DishForm(props)',props)
   const { types, onChange, onSubmit, dishName } = props;
   const typeOptions =
     types &&
@@ -40,10 +40,8 @@ function DishForm(props) {
           />
         </label>
         <br />
-
-        <input type="submit" className='btn btn-outline-info' value="Voeg gerecht toe" />
-      </form>  
-
+        <input type="submit" value="Voeg gerecht toe" />
+      </form>
     </div>
   );
 }

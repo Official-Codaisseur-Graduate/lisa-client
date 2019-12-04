@@ -3,6 +3,7 @@ import "./App.css";
 import { Route, Link } from "react-router-dom";
 import Menu from "../Menu";
 import WeekSelect from "../WeekSelect";
+import CreateDishFormContainer from "../CreateDishForm/index";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { getLocations } from "../../actions/locationActions";
@@ -13,8 +14,8 @@ import HomeContainer from "../Home";
 class App extends React.Component {
   componentDidMount() {
     this.props.getLocations();
-    console.log("get locations", this.props.getLocations());
-    console.log("loca state", this.props.locationState);
+    //console.log("get locations", this.props.getLocations());
+    //console.log("loca state", this.props.locationState);
   }
 
   state = {
@@ -60,7 +61,13 @@ class App extends React.Component {
           </Link>
         </header>
         <Route exact path={`/location/:locationId`} component={Menu} />
+        <Route exact path={`/location/:locationId`} component={CreateDishFormContainer} />
         <Route path="/week" component={WeekSelect} />
+        <Route
+          exact
+          path={`/location/:locationId/createDish`}
+          component={CreateDishFormContainer}
+        />
         {/* home container test route */}
         <Route exact path="/" component={HomeContainer} />
       </div>
@@ -69,8 +76,7 @@ class App extends React.Component {
 }
 
 const mapStateToProps = state => {
-  console.log("location state in cont", state);
-
+  //console.log("location state in cont", state);
   return {
     locationState: state.locationReducer,
     date: state.date

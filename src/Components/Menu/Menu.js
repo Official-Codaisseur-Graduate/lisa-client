@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./Menu.css";
 import Calendar from "react-calendar";
 import DishPicker from "../DishPicker";
-import DishForm from "../DishForm";
+//import TypeForm from '../TypeForm';
 import MenuDisplay from "../MenuDisplay";
 
 class Menu extends Component {
@@ -20,7 +20,6 @@ class Menu extends Component {
               />
             </div>
             <DishPicker />
-            <DishForm /> 
           </div>
           <MenuDisplay />
         </div>
