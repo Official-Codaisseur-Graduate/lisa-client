@@ -18,7 +18,7 @@
 .sideBar {
   height: 90vh;
   width: 40vh;
-  background-color: lightgrey;
+  /* background-color: lightgrey; */
 }
 
 .Calendar {
@@ -70,6 +70,14 @@
   flex-direction: column;
 }
 
+.DishPicker label {
+  font-size: 16px;
+}
+
+.DishForm label {
+  font-size: 16px;
+}
+
 .DishPicker {
   /*height: 15.5vh;*/
 }
@@ -87,7 +95,10 @@
 .typeFormName {
   margin: 1vh auto;
   width: 30vh;
-  height: 2.5vh;
+  height: 40px;
+  border-radius: 0.25rem;
+  background-color: white;
+  font-size: 16px;
 }
 
 .TypeForm {
