@@ -33,7 +33,13 @@
 }
 
 .menuOption {
-  padding: 7vw;
+  padding-top: 2vw;
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+
+.menuOption h5 {
+  margin: 1.5rem auto;
 }
 
 .menuEditor {
@@ -43,15 +49,17 @@
 .MenuDisplay {
   margin: auto;
   height: 90vh;
-  overflow: scroll;
+  /* overflow: scroll; */
 }
 
 .menuItem p {
   margin: 0 auto;
 }
+
 .menuItem {
   margin: 0 auto;
   display: flex;
+  align-items: center;
 }
 
 .DishForm,

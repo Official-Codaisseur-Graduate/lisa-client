@@ -1,4 +1,5 @@
 import React from 'react'
+import './MenuDisplay.css';
 
 
 function MenuDisplay(props) {
@@ -22,14 +23,14 @@ function MenuDisplay(props) {
       return (
         <div className="menuItem" key={id}>
           <p key={id}>{dish_name}</p>
-          <button value={id} onClick={deleteItem} style={{ color: 'red' }}>X</button>
+          <button type="button" className="btn btn-outline-danger btn-sm" value={id} onClick={deleteItem} >Delete</button>
         </div>
       )
     })
 
     return (
       <div key={type} className="menuItemType">
-        <h2>{type}</h2>
+        <h5>{type}</h5>
         {menuItems}
       </div>
     )
@@ -41,14 +42,14 @@ function MenuDisplay(props) {
       return (
         <div className="menuItem" key={id}>
           <p key={id}>{dish_name}</p>
-          <button value={id} onClick={deleteItem} style={{ color: 'red' }}>X</button>
+          <button type="button" className="btn btn-outline-danger btn-sm" value={id} onClick={deleteItem} >Delete</button>
         </div>
       )
     })
 
     return (
       <div key={type} className="menuItemType">
-        <h2>{type}</h2>
+        <h5>{type}</h5>
         {menuItems}
       </div>
     )
@@ -56,6 +57,7 @@ function MenuDisplay(props) {
 
   return (
     <div>
+      <h2 className='menu-title'>Menu van de Dag </h2>
       {menuItemsByTypeOne && menuItemsByTypeTwo
         ? <div className="menuOptions">
           <div className="menuOption">{menuItemsByTypeOne}</div>
