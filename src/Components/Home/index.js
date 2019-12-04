@@ -6,7 +6,7 @@ class HomeContainer extends Component {
   render() {
     return (
       // class names are *mostly* bootstrap defaults, check css file for custom classes
-      <div className="m-5 home-wrapper">
+      <div className="w-75 mx-auto my-5">
         <Jumbotron fluid className="bg-info rounded text-white">
           <Container className="w-75">
             <h3 className="text-uppercase">Find your kitchen</h3>
