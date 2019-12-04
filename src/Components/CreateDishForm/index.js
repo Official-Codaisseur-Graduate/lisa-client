@@ -4,7 +4,7 @@ import { getTypes } from "../../actions/types";
 import { createDish } from "../../actions/dishes";
 import DishForm from "./DishForm";
 
-export class DishCreateFormContainer extends Component {
+export class CreateDishFormContainer extends Component {
   state = {
     typeId: "",
     dishName: ""
@@ -58,5 +58,5 @@ const mapStateToProps = state => {
 };
 
 export default connect(mapStateToProps, { getTypes, createDish })(
-  DishCreateFormContainer
+  CreateDishFormContainer
 );

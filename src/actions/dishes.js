@@ -38,7 +38,7 @@ const dishFetched = dish => ({
 // add a dish of a type
 export const createDish = (dish, locationId) => dispatch => {
   request
-    .post(`${baseUrl}/location/${locationId}/dishes`)
+    .post(`${baseUrl}/location/${locationId}/createDish`)
     .send({ dish })
     .then(res => dispatch(addDishSuccess(res.body)))
     .catch(err => {
