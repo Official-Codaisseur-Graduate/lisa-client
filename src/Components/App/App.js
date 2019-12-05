@@ -14,21 +14,14 @@ import HomeContainer from "../Home";
 class App extends React.Component {
   componentDidMount() {
     this.props.getLocations();
-    //console.log("get locations", this.props.getLocations());
-    //console.log("loca state", this.props.locationState);
   }
 
-  state = {
-    value: "",
-    location: ""
-  };
 
   updateSelection = event => {
     const selectedIndex = event.target.options.selectedIndex;
     let locationId = event.target.options[selectedIndex].getAttribute(
       "data-key"
     );
-    this.setState({ location: locationId });
     this.props.history.push(`/location/${locationId}`);
     this.props.setLocationId(locationId);
     this.props.getDayMenu(this.props.date.date, locationId);
