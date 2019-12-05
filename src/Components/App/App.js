@@ -6,8 +6,8 @@ import WeekSelect from "../WeekSelect";
 import CreateDishFormContainer from "../CreateDishForm/index";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import { getLocations } from "../../actions/locationActions";
-import { setLocationId } from "../../actions/currentLocation";
+import { getLocations, setLocationId } from "../../actions/locations";
+// import { setLocationId } from "../../actions/currentLocation";
 import { getDayMenu } from "../../actions/menu";
 import HomeContainer from "../Home";
 
@@ -54,7 +54,11 @@ class App extends React.Component {
           </Link>
         </header>
         <Route exact path={`/location/:locationId`} component={Menu} />
-        <Route exact path={`/location/:locationId`} component={CreateDishFormContainer} />
+        <Route
+          exact
+          path={`/location/:locationId`}
+          component={CreateDishFormContainer}
+        />
         <Route path="/week" component={WeekSelect} />
         <Route
           exact
