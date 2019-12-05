@@ -11,9 +11,8 @@ export const setDayMenu = menu => {
 
 // 5
 export const getDayMenu = (date, locationId) => dispatch => {
-  //console.log("date here", date);
+  console.log("date here", date);
   request
-    //add location
     .get(`${baseUrl}/location/${locationId}/menus/?date=${date}`)
     .send(date)
     .then(res => {
@@ -22,8 +21,7 @@ export const getDayMenu = (date, locationId) => dispatch => {
 };
 
 export const addMenuItem = (dish, locationId) => dispatch => {
-  //console.log("dish date", dish);
-
+  console.log("addMenuItem", dish);
   request
     .post(`${baseUrl}/location/${locationId}/menus`)
     .send({ dish })
@@ -31,19 +29,7 @@ export const addMenuItem = (dish, locationId) => dispatch => {
       dispatch(getDayMenu(dish.date, locationId));
     });
 };
-export const deleteMenuItemSuccess = itemId => {
-  return {
-    type: ITEM_MENU_DELETE,
-    itemId
-  };
-};
-export const deleteMenuItem = (id, date) => dispatch => {
-  //console.log("check id and date", id, date);
-  request
-    .delete(`${baseUrl}/menus/${id}`)
-    .then(() => dispatch(deleteMenuItemSuccess(id)));
-  // .then(() => dispatch(getDayMenu(date)));
-};
+
 
 export const setWeekMenu = menu => {
   return {
@@ -56,4 +42,20 @@ export const getWeekMenu = (date, locationId) => dispatch => {
   request
     .get(`${baseUrl}/location/${locationId}/menu/week/${date}`)
     .then(res => dispatch(setWeekMenu(res.body)));
+};
+
+
+//DELETE MENU, NOT YET USED IN THE APP
+export const deleteMenuItemSuccess = itemId => {
+  return {
+    type: ITEM_MENU_DELETE,
+    itemId
+  };
+};
+export const deleteMenuItem = (id, date) => dispatch => {
+  //console.log("check id and date", id, date);
+  request
+    .delete(`${baseUrl}/menus/${id}`)
+    .then(() => dispatch(deleteMenuItemSuccess(id)));
+  // .then(() => dispatch(getDayMenu(date)));
 };

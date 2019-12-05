@@ -23,12 +23,10 @@ export class CreateDishFormContainer extends Component {
 
   onSubmit = async event => {
     event.preventDefault();
-
     const { typeId, dishName, currentLocation } = this.state;
     const dish = { typeId, dishName, currentLocation };
-
+    
     await this.props.createDish(dish, currentLocation);
-
     await this.setState({
       dishName: ""
     });

@@ -6,12 +6,25 @@ export const CREATE_TYPE_SUCCESS = 'CREATE_TYPE_SUCCESS'
 export const TYPE_DELETE_SUCCESS = 'TYPE_DELETE_SUCCESS'
 export const TYPE_UPDATE_SUCCESS = 'TYPE_UPDATE_SUCCESS'
 
+//get all types
+const typesFetched = types => ({
+    type: TYPES_FETCHED,
+    types
+})
+
+export const getTypes = () => (dispatch) => {
+    request(`${baseUrl}/types`)
+        .then(response => {
+            dispatch(typesFetched(response.body))
+        })
+        .catch(console.error)
+}
+
 //get one type
 const typeFetched = dishType => ({
     type: TYPE_FETCHED,
     dishType
 })
-
 export const getType = (id) => (dispatch) => {
     request(`${baseUrl}/types/${id}`)
         .then(response => {
@@ -20,29 +33,13 @@ export const getType = (id) => (dispatch) => {
         .catch(console.error)
 }
 
-
-//get all types
-const typesFetched = types => ({
-    type: TYPES_FETCHED,
-    types
-})
-
-export const getTypes = () => (dispatch) => {
-
-    request(`${baseUrl}/types`)
-        .then(response => {
-            dispatch(typesFetched(response.body))
-        })
-        .catch(console.error)
-}
-
-//create new type
+//create new type NOT USED
 const createTypeSuccess = dishType => ({
     type: CREATE_TYPE_SUCCESS,
     dishType
 })
 
-//i will now work on this
+//NOT USED YET
 export const createType = (type, locationId) => (dispatch) => {
     request
         .post(`${baseUrl}/types`)
@@ -53,7 +50,7 @@ export const createType = (type, locationId) => (dispatch) => {
         .catch(console.error)
 }
 
-// delete type
+// NOT USED YET
 const typeDeleteSuccess = id => ({
     type: TYPE_DELETE_SUCCESS,
     id
@@ -67,7 +64,7 @@ export const deleteType = (id) => (dispatch) => {
         .catch(console.error)
 }
 
-//update type
+//update type NOT USED YET
 const typeUpdateSuccess = dishType => ({
     type: TYPE_UPDATE_SUCCESS,
     dishType
