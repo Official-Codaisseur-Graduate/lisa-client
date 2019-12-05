@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-import { getLocations } from "../../actions/locationActions";
-import { setLocationId } from "../../actions/currentLocation";
+import { getLocations } from "../../actions/locations";
+import { setLocationId } from "../../actions/locations";
 import { getDayMenu } from "../../actions/menu";
 
 class SelectLocation extends React.Component {
