@@ -1,7 +1,8 @@
 import * as request from "superagent";
 import { baseUrl } from "../constants";
-import { GET_LOCATIONS } from "./";
+import { GET_LOCATIONS, SET_LOCATION_ID } from "./";
 
+// get all locations
 export const getLocationActions = payload => {
   return {
     type: GET_LOCATIONS,
@@ -15,4 +16,12 @@ export const getLocations = () => dispatch => {
     .then(res => {
       dispatch(getLocationActions(res.body));
     });
+};
+
+// set current location with your selection
+export const setLocationId = locationId => {
+  return {
+    type: SET_LOCATION_ID,
+    payload: locationId
+  };
 };
