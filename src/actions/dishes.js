@@ -36,10 +36,8 @@ const dishFetched = dish => ({
 });
 
 // add a dish of a type
-export const createDish = (dish, locationId) => dispatch => {
-  request
-    .post(`${baseUrl}/location/${locationId}/createDish`)
-    .send({ dish })
+export const createDish = dish => dispatch => {
+  request.post(`${baseUrl}/createDish`).send({ dish })
     .then(res => dispatch(addDishSuccess(res.body)))
     .catch(err => {
       console.error(err);
@@ -53,9 +51,7 @@ const addDishSuccess = dish => ({
 
 // delete dish
 export const deleteDish = id => dispatch => {
-  request
-    .delete(`${baseUrl}/dishes/${id}`)
-    .catch(console.error);
+  request.delete(`${baseUrl}/dishes/${id}`).catch(console.error);
 };
 
 //update dish
