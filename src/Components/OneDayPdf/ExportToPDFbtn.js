@@ -1,6 +1,16 @@
 import React, { Component } from "react";
+import {connect} from 'react-redux';
+import {
+    Page,
+    Text,
+    View,
+    Document,
+    StyleSheet,
+    PDFViewer,
+    PDFDownloadLink
+  } from "@react-pdf/renderer";
 import "./OneDayPdf.css";
-import OneDayPdfDocument from './OneDayPdfDocument'
+import PdfDiv from "./PdfDiv";
 
 export class ExportToPDFbtn extends Component {
   state = { showPopup: false };
@@ -18,7 +28,11 @@ export class ExportToPDFbtn extends Component {
             <div className="popup-header">
               <button onClick={this.triggerPopup} className="popup-close-button">X</button>
             </div>
-            <OneDayPdfDocument />
+            <div>
+            
+                <PdfDiv menu={this.props.menu} date={this.props.date}/>
+           
+            </div>
           </div>
         </div>
       ) : (
@@ -28,4 +42,14 @@ export class ExportToPDFbtn extends Component {
   }
 }
 
-export default ExportToPDFbtn;
+// export default ExportToPDFbtn;
+
+const mapStateToProps = state => {
+    return {
+      menu: state.menu,
+      date: state.date,
+      types: state.types
+    };
+  };
+  
+export default connect(mapStateToProps)(ExportToPDFbtn);
