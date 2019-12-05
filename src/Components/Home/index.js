@@ -6,8 +6,8 @@ class HomeContainer extends Component {
   render() {
     return (
       // class names are *mostly* bootstrap defaults, check css file for custom classes
-      <div className="w-75 mx-auto my-5">
-        <Jumbotron fluid className="bg-info rounded text-white">
+      <div className="w-50 mx-auto my-5">
+        <Jumbotron fluid className="bg-jumbotron rounded text-black">
           <Container className="w-75">
             <h3 className="text-uppercase">Vind je keuken</h3>
             <p className="lead">
@@ -15,7 +15,7 @@ class HomeContainer extends Component {
             </p>
           </Container>
         </Jumbotron>
-        <Jumbotron fluid className="bg-info rounded text-white">
+        <Jumbotron fluid className="bg-jumbotron rounded text-black">
           <Container className="w-75">
             <h3 className="text-uppercase">Gerecht maken</h3>
             <p className="lead">
@@ -26,7 +26,7 @@ class HomeContainer extends Component {
             <Button className="btn-show-me mt-3">Gerecht maken</Button>
           </Container>
         </Jumbotron>
-        <Jumbotron fluid className="bg-info rounded text-white">
+        <Jumbotron fluid className="bg-jumbotron rounded text-black">
           <Container className="w-75">
             <h3 className="text-uppercase">Toevoegen aan menu</h3>
             <p className="lead">
@@ -38,7 +38,7 @@ class HomeContainer extends Component {
             <Button className="btn-show-me mt-3">Naar het menu</Button>
           </Container>
         </Jumbotron>
-        <Jumbotron fluid className="bg-info rounded text-white">
+        <Jumbotron fluid className="bg-jumbotron rounded text-black">
           <Container className="w-75">
             <h3 className="text-uppercase">Menu afdrukken</h3>
             <p className="lead">
