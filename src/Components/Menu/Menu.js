@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Menu.css";
 import Calendar from "react-calendar";
-import DishPicker from "../DishPicker";
+import DishPickerContainer from "../DishPicker/index";
 import MenuDisplay from "../MenuDisplay";
 
 class Menu extends Component {
@@ -18,7 +18,9 @@ class Menu extends Component {
                 onClickDay={date => this.props.changeDate(date)}
               />
             </div>
-            <DishPicker />
+            <div>
+            <DishPickerContainer />
+            </div>
           </div>
           <MenuDisplay />
         </div>
