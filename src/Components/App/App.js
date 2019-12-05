@@ -15,18 +15,9 @@ class App extends React.Component {
         <Navbar />
         <Route exact path="/" component={HomeContainer} />
         <Route exact path="/location" component={SelectLocation} />
-        <Route
-          exact
-          path={`/location/:locationId`}
-          component={CreateDishFormContainer}
-        />
+        <Route exact path={`/createDish`} component={CreateDishFormContainer} />
         <Route exact path={`/location/:locationId`} component={Menu} />
         <Route path="/week" component={WeekSelect} />
-        <Route
-          exact
-          path={`/createDish`}
-          component={CreateDishFormContainer}
-        />
       </div>
     );
   }
