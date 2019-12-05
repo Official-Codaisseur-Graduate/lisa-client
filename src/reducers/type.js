@@ -1,6 +1,5 @@
 import { TYPE_FETCHED, TYPE_UPDATE_SUCCESS } from '../actions/types'
 
-
 const reducer = (state = null, action = {}) => {
     switch (action.type) {
         case TYPE_FETCHED:
