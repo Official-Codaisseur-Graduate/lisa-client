@@ -10,16 +10,14 @@ class HomeContainer extends Component {
         <Jumbotron fluid className="bg-jumbotron rounded text-black">
           <Container className="w-75">
             <h3 className="text-uppercase">Vind je keuken</h3>
-            <p className="lead">
-              Zoek uw keuken in het vervolgkeuzemenu hierboven.
-            </p>
+            <p className="lead">Zoek uw keuken in het keuzemenu hierboven.</p>
           </Container>
         </Jumbotron>
         <Jumbotron fluid className="bg-jumbotron rounded text-black">
           <Container className="w-75">
             <h3 className="text-uppercase">Gerecht maken</h3>
             <p className="lead">
-              Selecteer het gerechttype en voer de gerechtnaam in. U maakt een
+              Selecteer het type gerecht en voer daarvan de naam in. U maakt een
               nieuw gerecht dat aan het menu wordt toegevoegd.
             </p>
             {/* add link element to wrap button */}
@@ -30,8 +28,8 @@ class HomeContainer extends Component {
           <Container className="w-75">
             <h3 className="text-uppercase">Toevoegen aan menu</h3>
             <p className="lead">
-              Kies een datum op de kalender en vind je gerecht uit de
-              overeenkomstig gerechttype. U kunt uw gerechten toevoegen aan het
+              Kies een datum op de kalender en vind je gerecht uit een keuzemenu
+              met datzelfde type gerecht. U kunt uw gerechten toevoegen aan het
               menu voor de geselecteerde dag.
             </p>
             {/* add link element to wrap button */}
@@ -42,8 +40,9 @@ class HomeContainer extends Component {
           <Container className="w-75">
             <h3 className="text-uppercase">Menu afdrukken</h3>
             <p className="lead">
-              Selecteer de week met de menu's die u wilt afdrukken op kalender.
-              U kunt een PDF-bestand genereren voor de menu's van de week.
+              Selecteer op de kalender de week met de menu's die u wilt
+              afdrukken. U kunt dan PDF-bestand afdrukken voor de menu's van die
+              week.
             </p>
             {/* add link element to wrap button */}
             <Button className="btn-show-me mt-3">Menu afdrukken</Button>
