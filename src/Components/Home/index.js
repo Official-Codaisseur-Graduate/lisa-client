@@ -6,47 +6,46 @@ class HomeContainer extends Component {
   render() {
     return (
       // class names are *mostly* bootstrap defaults, check css file for custom classes
-      <div className="w-75 mx-auto my-5">
-        <Jumbotron fluid className="bg-info rounded text-white">
+      <div className="w-50 mx-auto my-5">
+        <Jumbotron fluid className="bg-jumbotron rounded text-black">
           <Container className="w-75">
-            <h3 className="text-uppercase">Find your kitchen</h3>
-            <p className="lead">
-              Find your kitchen in the dropdown menu above.
-            </p>
+            <h3 className="text-uppercase">Vind je keuken</h3>
+            <p className="lead">Zoek uw keuken in het keuzemenu hierboven.</p>
           </Container>
         </Jumbotron>
-        <Jumbotron fluid className="bg-info rounded text-white">
+        <Jumbotron fluid className="bg-jumbotron rounded text-black">
           <Container className="w-75">
-            <h3 className="text-uppercase">Create dish</h3>
+            <h3 className="text-uppercase">Gerecht maken</h3>
             <p className="lead">
-              Select the dish type and enter the dish name. You will create a
-              new dish to be added on the menu.
+              Selecteer het type gerecht en voer daarvan de naam in. U maakt een
+              nieuw gerecht dat aan het menu wordt toegevoegd.
             </p>
             {/* add link element to wrap button */}
-            <Button className="btn-show-me mt-3">Show me</Button>
+            <Button className="btn-show-me mt-3">Gerecht maken</Button>
           </Container>
         </Jumbotron>
-        <Jumbotron fluid className="bg-info rounded text-white">
+        <Jumbotron fluid className="bg-jumbotron rounded text-black">
           <Container className="w-75">
-            <h3 className="text-uppercase">Add to menu</h3>
+            <h3 className="text-uppercase">Toevoegen aan menu</h3>
             <p className="lead">
-              Pick a date on the calendar and find your dish from the
-              corresponding dish type. You can add your dishes on the menu for
-              the selected day.
+              Kies een datum op de kalender en vind je gerecht uit een keuzemenu
+              met datzelfde type gerecht. U kunt uw gerechten toevoegen aan het
+              menu voor de geselecteerde dag.
             </p>
             {/* add link element to wrap button */}
-            <Button className="btn-show-me mt-3">Show me</Button>
+            <Button className="btn-show-me mt-3">Naar het menu</Button>
           </Container>
         </Jumbotron>
-        <Jumbotron fluid className="bg-info rounded text-white">
+        <Jumbotron fluid className="bg-jumbotron rounded text-black">
           <Container className="w-75">
-            <h3 className="text-uppercase">Print menu</h3>
+            <h3 className="text-uppercase">Menu afdrukken</h3>
             <p className="lead">
-              Select the week containing the menus you want to print on the
-              calendar. You can generate a PDF file for the menus of the week.
+              Selecteer op de kalender de week met de menu's die u wilt
+              afdrukken. U kunt dan PDF-bestand afdrukken voor de menu's van die
+              week.
             </p>
             {/* add link element to wrap button */}
-            <Button className="btn-show-me mt-3">Show me</Button>
+            <Button className="btn-show-me mt-3">Menu afdrukken</Button>
           </Container>
         </Jumbotron>
       </div>

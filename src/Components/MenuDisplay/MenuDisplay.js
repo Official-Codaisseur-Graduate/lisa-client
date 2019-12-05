@@ -1,5 +1,6 @@
 import React from 'react'
 import './MenuDisplay.css';
+import ExportToPDFbtn from '../OneDayPdf/ExportToPDFbtn';
 
 
 function MenuDisplay(props) {
@@ -86,6 +87,8 @@ function MenuDisplay(props) {
           <div className="menuOption">{sort(menuItemsByTypeTwo)}</div>
         </div>
         : "Aan het laden..."}
+    
+    <ExportToPDFbtn />
     </div>
   );
 }
