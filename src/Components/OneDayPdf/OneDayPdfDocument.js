@@ -12,10 +12,33 @@ export default class OneDayPdfDocument extends React.Component {
                 margin: 10,
                 padding: 10,
             },
+            sectionCenter: {
+                padding: 10,
+                marginTop: 10,
+                marginBottom: 10,
+                marginLeft: 'auto',
+                marginRight: 'auto',
+            },
             heading: {
                 marginTop: 10,
+                marginBottom: 10,
                 textAlign: 'center',
                 fontWeight: 'bold',
+                fontSize: 30,
+            },
+            option: {
+                fontSize: 25,
+                fontWeight: 'bold',
+                margin: 10,
+                padding: 10,
+            },
+            flex: {
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'center',
+            },
+            rowElement: {
+                justifyContent: 'flex-start',
             }
             });
 
@@ -42,7 +65,7 @@ export default class OneDayPdfDocument extends React.Component {
         }
           
         const items = this.props.menu.map((dish)=>{
-            return <View key={toTypeId[dish.type_name]} style={styles.section}>
+            return <View key={toTypeId[dish.type_name]} style={styles.sectionCenter}>
                 <Text>{dish.type_name}</Text>
                 <Text>{dish.dish_name}</Text>
             </View>
@@ -64,6 +87,24 @@ export default class OneDayPdfDocument extends React.Component {
         console.log('OptionTwo',OptionTwo)
         console.log('SortedItems?', sortedItems)
 
+        const twoOptionsItems = () => {
+            return <View style={styles.flex}>
+                <View style={styles.rowElement}>
+                    <Text style={styles.option}>
+                        Option 1
+                    </Text>
+                    {OptionOne}
+                </View>
+
+                <View style={styles.rowElement}>
+                    <Text style={styles.option}>
+                        Option 2
+                    </Text>
+                {OptionTwo}
+                </View>
+            </View>
+        }
+
         return (<Document>
             <Page size='A4' style={styles.page}>
                 <View style={styles.heading}>
@@ -74,6 +115,7 @@ export default class OneDayPdfDocument extends React.Component {
                 {/* {sortedItems} */}
                 {/* {OptionTwo === true && {sortedItems}} */} 
                 {OptionTwo.length === 0 && sortedItems} 
+                {OptionTwo.length > 0 && twoOptionsItems()}
             </Page>
         </Document>
         )
