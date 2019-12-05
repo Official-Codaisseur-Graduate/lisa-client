@@ -6,29 +6,22 @@ import WeekSelect from "../WeekSelect";
 import CreateDishFormContainer from "../CreateDishForm/index";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import { getLocations } from "../../actions/locationActions";
-import { setLocationId } from "../../actions/currentLocation";
+import { getLocations, setLocationId } from "../../actions/locations";
+// import { setLocationId } from "../../actions/currentLocation";
 import { getDayMenu } from "../../actions/menu";
 import HomeContainer from "../Home";
 
 class App extends React.Component {
   componentDidMount() {
     this.props.getLocations();
-    //console.log("get locations", this.props.getLocations());
-    //console.log("loca state", this.props.locationState);
   }
 
-  state = {
-    value: "",
-    location: ""
-  };
 
   updateSelection = event => {
     const selectedIndex = event.target.options.selectedIndex;
     let locationId = event.target.options[selectedIndex].getAttribute(
       "data-key"
     );
-    this.setState({ location: locationId });
     this.props.history.push(`/location/${locationId}`);
     this.props.setLocationId(locationId);
     this.props.getDayMenu(this.props.date.date, locationId);
@@ -61,7 +54,11 @@ class App extends React.Component {
           </Link>
         </header>
         <Route exact path={`/location/:locationId`} component={Menu} />
-        <Route exact path={`/location/:locationId`} component={CreateDishFormContainer} />
+        <Route
+          exact
+          path={`/location/:locationId`}
+          component={CreateDishFormContainer}
+        />
         <Route path="/week" component={WeekSelect} />
         <Route
           exact
