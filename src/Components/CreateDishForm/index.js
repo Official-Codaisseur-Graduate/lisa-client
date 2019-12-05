@@ -7,7 +7,8 @@ import DishForm from "./DishForm";
 export class CreateDishFormContainer extends Component {
   state = {
     typeId: "",
-    dishName: ""
+    dishName: "",
+    currentLocation: this.props.currentLocation
   };
 
   componentDidMount = () => {
@@ -22,19 +23,19 @@ export class CreateDishFormContainer extends Component {
 
   onSubmit = async event => {
     event.preventDefault();
-    const { typeId, dishName } = this.state;
-    const dish = { typeId, dishName };
-    await this.props.createDish(dish, this.props.currentLocationState);
+    const { typeId, dishName, currentLocation } = this.state;
+    const dish = { typeId, dishName, currentLocation };
+    
+    await this.props.createDish(dish, currentLocation);
     await this.setState({
-      // typeId: "",
       dishName: ""
     });
   };
 
   render() {
-    const { onChange, onSubmit, props, state } = this;
-    const { types } = props;
-    const { typeId, dishName } = state;
+    const { onChange, onSubmit } = this;
+    const { types } = this.props;
+    const { typeId, dishName } = this.state;
     return (
       <div className="DishForm">
         <DishForm
@@ -50,10 +51,9 @@ export class CreateDishFormContainer extends Component {
 }
 
 const mapStateToProps = state => {
-  //console.log('try again', state)
   return {
     types: state.types,
-    currentLocationState: state.currentLocation
+    currentLocation: state.currentLocation
   };
 };
 

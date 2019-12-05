@@ -1,7 +1,6 @@
 import React from "react";
 
 function DishForm(props) {
-  //console.log('DishForm(props)',props)
   const { types, onChange, onSubmit, dishName } = props;
   const typeOptions =
     types &&
