@@ -42,11 +42,24 @@ function MenuDisplay(props) {
       )
     })
 
+    const newArray = []
+    const replace = (array) => {
+      if (array.length > 1){
+        
+        newArray[0] = array[array.length - 1];
+        array.length = 1;
+        newArray.length = 1;
+        
+        return newArray
+      }else{
+        return array
+      }
+    }
 
     return (
       <div key={toTypeId[type]} className="menuItemType">
         <h5>{type}</h5>
-        {menuItems}
+        {replace(menuItems)}
       </div>
     )
   })
@@ -62,10 +75,22 @@ function MenuDisplay(props) {
       )
     })
 
+    const newArray = []
+    const replace = (array) => {
+      if (array.length > 1){ 
+        newArray[0] = array[array.length - 1];
+        array.length = 1;
+        newArray.length = 1;
+        return newArray
+      }else{
+      return array
+      }
+    }
+
     return (
       <div key={toTypeId[type]} className="menuItemType">
         <h5>{type}</h5>
-        {menuItems}
+        {replace(menuItems)}
       </div>
     )
   })
@@ -93,4 +118,7 @@ function MenuDisplay(props) {
   );
 }
 
+
+
 export default MenuDisplay
+
