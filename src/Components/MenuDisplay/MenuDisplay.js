@@ -36,17 +36,34 @@ function MenuDisplay(props) {
       const { dish_name, id } = menuItem
       return (
         <div className="menuItem" key={id}>
+          {console.log('WHAT IS MENUiTEM?', menuItem)}
           <p key={id}>{dish_name}</p>
+          {console.log('WAT IS P??', dish_name)}
           <button type="button" className="btn btn-outline-danger btn-sm" value={id} onClick={deleteItem} >Delete</button>
         </div>
       )
     })
 
+    const newArray = []
+    const replace = (array) => {
+      if (array.length > 1){
+        
+        newArray[0] = array[array.length - 1];
+        array.length = 1;
+        newArray.length = 1;
+        console.log('Array in Replace funtion',array)
+        return newArray
+      }else{
+      return array
+    }
+    }
 
     return (
       <div key={toTypeId[type]} className="menuItemType">
         <h5>{type}</h5>
-        {menuItems}
+        {console.log('MENUITEM.LENGTH', menuItems.length)}
+        {replace(menuItems)}
+        {console.log('MENUITEM.LEGNTH AFTER FUNTION', menuItems.length)}
       </div>
     )
   })
