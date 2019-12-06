@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Jumbotron, Container, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "./Home.css";
 
 class HomeContainer extends Component {
@@ -10,7 +11,12 @@ class HomeContainer extends Component {
         <Jumbotron fluid className="bg-jumbotron rounded text-black">
           <Container className="w-75">
             <h3 className="text-uppercase">Vind je keuken</h3>
-            <p className="lead">Zoek uw keuken in het keuzemenu hierboven.</p>
+            <p className="lead">Vind je keuken voordat je menu maakt:</p>
+            <Link to="location">
+              <Button className="btn-show-me d-inline-block">
+                Vind je keuken
+              </Button>
+            </Link>
           </Container>
         </Jumbotron>
         <Jumbotron fluid className="bg-jumbotron rounded text-black">
@@ -21,7 +27,9 @@ class HomeContainer extends Component {
               nieuw gerecht dat aan het menu wordt toegevoegd.
             </p>
             {/* add link element to wrap button */}
-            <Button className="btn-show-me mt-3">Gerecht maken</Button>
+            <Link to="createDish">
+              <Button className="btn-show-me">Gerecht maken</Button>
+            </Link>
           </Container>
         </Jumbotron>
         <Jumbotron fluid className="bg-jumbotron rounded text-black">
@@ -33,7 +41,9 @@ class HomeContainer extends Component {
               menu voor de geselecteerde dag.
             </p>
             {/* add link element to wrap button */}
-            <Button className="btn-show-me mt-3">Naar het menu</Button>
+            <Link to="menu">
+              <Button className="btn-show-me">Naar het menu</Button>
+            </Link>
           </Container>
         </Jumbotron>
         <Jumbotron fluid className="bg-jumbotron rounded text-black">
@@ -45,7 +55,9 @@ class HomeContainer extends Component {
               week.
             </p>
             {/* add link element to wrap button */}
-            <Button className="btn-show-me mt-3">Menu afdrukken</Button>
+            <Link to="/weekMenu">
+              <Button className="btn-show-me">Menu afdrukken</Button>
+            </Link>
           </Container>
         </Jumbotron>
       </div>
