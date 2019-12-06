@@ -1,25 +1,19 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector } from "react-redux"; //react hooks used here
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const allLocations = useSelector(state => state.locationReducer);
-  
   const currentLocation = useSelector(state => state.currentLocation);
-  console.log("currentLocation", currentLocation);
-  const currLocparsed = parseInt(currentLocation);
-  console.log("currLocparsed", currLocparsed);
+  const currLocParsed = parseInt(currentLocation);
 
-  const luck = allLocations.find(location => location.id === currLocparsed);
-  console.log("luck", luck);
+  const clientCurrentLocation = allLocations.find(
+    location => location.id === currLocParsed
+  );
 
-  const luckName = luck && true;
-  console.log("luckName", luckName);
-
-  const join = luckName && <p>Your current address is {luck.address}</p>;
-
-  // const addre = luck.name;
-  // console.log("addre", addre);
+  const locationDisplay = clientCurrentLocation && (
+    <p>Your current address is: {clientCurrentLocation.address}</p>
+  );
 
   return (
     <div className="container">
@@ -39,7 +33,7 @@ const Navbar = () => {
         <Link className="nav-link" to="/weekMenu">
           Week select
         </Link>
-        {join}
+        {locationDisplay}
       </nav>
     </div>
   );
