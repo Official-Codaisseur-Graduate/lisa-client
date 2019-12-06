@@ -17,9 +17,10 @@ const Navbar = () => {
         <Link className="nav-link" to="/menu">
           Menu maken
         </Link>
-        <Link className="nav-link" to="/printMenu">
-          Menu afdrukken
+        <Link className="nav-link" to="/weekMenu">
+          Week select
         </Link>
+        <p className="navbar-brand">Your location is</p>
       </nav>
     </div>
   );
