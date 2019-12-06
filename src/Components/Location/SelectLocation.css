@@ -1,6 +1,10 @@
-.alert-appear {
-  animation-name: alert;
-  animation-duration: 0.3s;
+.select-location-wrapper {
+  border: solid lightgray 1px;
+  border-radius: 10px;
+  padding: 50px;
+  width: 40%;
+  min-width: 700px;
+  margin: 100px auto;
 }
 
 @keyframes alert {
@@ -10,4 +14,16 @@
   to {
     opacity: 1;
   }
+}
+
+.alert-message {
+  max-width: 500px;
+  min-height: 150px;
+  margin: 60px auto 0px;
+  animation-name: alert;
+  animation-duration: 0.4s;
+}
+
+.alert-message button {
+  margin: 10px;
 }

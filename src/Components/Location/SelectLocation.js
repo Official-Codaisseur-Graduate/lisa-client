@@ -42,23 +42,15 @@ class SelectLocation extends React.Component {
     // it would be cool if you can make the css opacity animation run everytime the location is updated
 
     const selectedMessage = locationSelected && (
-      <Alert
-        variant={alertVariant}
-        className="mx-auto alert-appear"
-        style={{ maxWidth: "500px", minHeight: "150px", margin: "60px auto" }}
-      >
+      <Alert variant={alertVariant} className="mx-auto alert-message">
         <Alert.Heading>{alertMessage}</Alert.Heading>
         <hr />
         <div className="d-flex justify-content-center">
           <Link to="/createDish">
-            <Button variant={buttonVariant} style={{ margin: "10px" }}>
-              Gerecht toevoegen
-            </Button>
+            <Button variant={buttonVariant}>Gerecht toevoegen</Button>
           </Link>
           <Link to="/menu">
-            <Button variant={buttonVariant} style={{ margin: "10px" }}>
-              Menu maken
-            </Button>
+            <Button variant={buttonVariant}>Menu maken</Button>
           </Link>
         </div>
       </Alert>
@@ -66,20 +58,22 @@ class SelectLocation extends React.Component {
 
     return (
       <Fragment>
-        <select onChange={this.updateSelection}>
-          <option value={""}>--Selecteer een locatie--</option>
+        <div className="select-location-wrapper">
+          <select onChange={this.updateSelection}>
+            <option value={""}>--Selecteer een locatie--</option>
 
-          {this.props.locations.map(location => (
-            <option
-              key={location.id}
-              data-key={location.id}
-              value={location.name}
-            >
-              {location.name}
-            </option>
-          ))}
-        </select>
-        {selectedMessage}
+            {this.props.locations.map(location => (
+              <option
+                key={location.id}
+                data-key={location.id}
+                value={location.name}
+              >
+                {location.name}
+              </option>
+            ))}
+          </select>
+          {selectedMessage}
+        </div>
       </Fragment>
     );
   }
