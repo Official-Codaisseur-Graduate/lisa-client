@@ -3,13 +3,14 @@ import { connect } from "react-redux";
 import { getLocations } from "../../actions/locations";
 import { setLocationId } from "../../actions/locations";
 import { getDayMenu } from "../../actions/menu";
-import { Alert, Button } from "react-bootstrap";
+import { Alert, Button, Dropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import "./SelectLocation.css";
 
 class SelectLocation extends React.Component {
   state = {
-    locationSelected: false
-    // locationUpdated: false
+    locationSelected: false,
+    locationUpdated: false
   };
 
   componentDidMount() {
@@ -24,27 +25,38 @@ class SelectLocation extends React.Component {
     // this.props.history.push(`/location/${locationId}`);
     this.props.setLocationId(locationId);
     //this.props.getDayMenu(this.props.date.date, locationId);
-    // this.state.locationSelected? this.setState({locationUpdated: true}) : this.setState({locationSelected: true})
-    this.setState({ locationSelected: true });
+    this.state.locationSelected
+      ? this.setState({ locationUpdated: true })
+      : this.setState({ locationSelected: true });
+    // this.setState({ locationSelected: true });
   };
 
   render() {
-    const selectedMessage = this.state.locationSelected && (
+    const { locationSelected, locationUpdated } = this.state;
+
+    const alertMessage = locationUpdated
+      ? "Bijgewerkte locatie!"
+      : "Geselecteerde locatie!";
+    const alertVariant = locationUpdated ? "info" : "success";
+    const buttonVariant = locationUpdated ? "outline-info" : "outline-success";
+    // it would be cool if you can make the css opacity animation run everytime the location is updated
+
+    const selectedMessage = locationSelected && (
       <Alert
-        variant="success"
-        className="mx-auto"
+        variant={alertVariant}
+        className="mx-auto alert-appear"
         style={{ maxWidth: "500px", minHeight: "150px", margin: "60px auto" }}
       >
-        <Alert.Heading>Geselecteerde locatie!</Alert.Heading>
+        <Alert.Heading>{alertMessage}</Alert.Heading>
         <hr />
         <div className="d-flex justify-content-center">
           <Link to="/createDish">
-            <Button variant="outline-success" style={{ margin: "10px" }}>
+            <Button variant={buttonVariant} style={{ margin: "10px" }}>
               Gerecht toevoegen
             </Button>
           </Link>
           <Link to="/menu">
-            <Button variant="outline-success" style={{ margin: "10px" }}>
+            <Button variant={buttonVariant} style={{ margin: "10px" }}>
               Menu maken
             </Button>
           </Link>
@@ -56,6 +68,7 @@ class SelectLocation extends React.Component {
       <Fragment>
         <select onChange={this.updateSelection}>
           <option value={""}>--Selecteer een locatie--</option>
+
           {this.props.locations.map(location => (
             <option
               key={location.id}
