@@ -70,7 +70,7 @@ export default class OneDayPdfDocument extends React.Component {
                 <Text>{dish.dish_name}</Text>
             </View>
         })
-
+        
         const sortedItems = sort(items)
         
         //const checkArray = sortedItems.map(dish => dish.key)
@@ -91,14 +91,14 @@ export default class OneDayPdfDocument extends React.Component {
             return <View style={styles.flex}>
                 <View style={styles.rowElement}>
                     <Text style={styles.option}>
-                        Option 1
+                        Optie 1
                     </Text>
                     {OptionOne}
                 </View>
 
                 <View style={styles.rowElement}>
                     <Text style={styles.option}>
-                        Option 2
+                        Optie 2
                     </Text>
                 {OptionTwo}
                 </View>
