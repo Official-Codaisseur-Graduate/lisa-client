@@ -11,7 +11,7 @@ class HomeContainer extends Component {
         <Jumbotron fluid className="bg-jumbotron rounded text-black">
           <Container className="w-75">
             <h3 className="text-uppercase">Vind je keuken</h3>
-            <p className="lead">Vind je keuken voordat je menu maakt:</p>
+            <p className="lead">Vind jouw keuken voordat je het menu maakt:</p>
             <Link to="location">
               <Button className="btn-show-me d-inline-block">
                 Vind je keuken
