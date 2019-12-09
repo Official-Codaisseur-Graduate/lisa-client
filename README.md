@@ -4,7 +4,7 @@ This is part of the LISA-project that we did for Vitalis (de Wilgenhof), a retir
 ![Landing page](https://github.com/Official-Codaisseur-Graduate/lisa-client/blob/development/Screenshot.png)
 
 # Contents
-- Introduction
+- [Introduction](#introduction)
 - Repositories in the LISA-project
 - Overview
 - Installation 
