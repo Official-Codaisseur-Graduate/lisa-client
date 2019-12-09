@@ -1,13 +1,12 @@
+# Introduction 
+This is part of the LISA-project that we did for Vitalis (de Wilgenhof), a retirement home in Eindhoven. This frontend, Vitalis Menu Editor, allows the chefs and staffs to add and edit the menu. 
+
 # Contents
 - Introduction
 - Repositories in the LISA-project
 - Overview
 - Installation 
 - Resources
-
-
-# Introduction 
-This is part of the LISA-project that we did for Vitalis (de Wilgenhof), a retirement home in Eindhoven. This project contains the Vitalis Menu Editor, the staff UI-part of the project. Project LISA also includes a Google Assistant app that reads the menu to residents. This UI was requested by the product owner to make it easier for the chef to make and edit his weekly menu, while at the same time adding to the database that our Google Assistant app reads from. 
 
 
 # Repositories in the LISA-project
@@ -20,10 +19,10 @@ NOTE: Read the Docs for set-up and the latest status of the code - make sure to 
 
 # Overview
 
-- The main functionalities: 
-* Add new dishes by type
-* Design menu for a specific date by choosing from the existing dishes
-* Export menu as PDF
+The main functionalities: 
+- Add new dishes by type
+- Design menu for a specific date by choosing from the existing dishes
+- Export menu as PDF
 
 
 The frontend is connected to the database on localhost:5000. 
