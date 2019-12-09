@@ -5,10 +5,10 @@ This is part of the LISA-project that we did for Vitalis (de Wilgenhof), a retir
 
 # Contents
 - [Introduction](#introduction)
-- Repositories in the LISA-project
-- Overview
-- Installation 
-- Resources
+- [Repositories in the LISA-project](#repositories-in-the-lisa-project)
+- [Overview](#overview)
+- [Installation](#installation) 
+- [Resources](#resources)
 
 
 # Repositories in the LISA-project
