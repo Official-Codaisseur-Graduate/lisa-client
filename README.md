@@ -58,4 +58,4 @@ The accompanying Google Assistant app uses Dialogflow for user interaction, and 
 - [PDF-README.md](https://github.com/Official-Codaisseur-Graduate/lisa-client/blob/development/PDF-README.md)
     - Details about the functionality of exporting week menu to PDF
 - [Github Projects](https://github.com/Official-Codaisseur-Graduate/lisa-client/projects/1)
-    - To-do list 
+    - To-do / improvement opportunities 
