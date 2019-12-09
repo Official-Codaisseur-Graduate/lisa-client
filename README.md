@@ -41,17 +41,19 @@ The accompanying Google Assistant app uses Dialogflow for user interaction, and 
     $ git checkout development
     $ npm install
     ```
-    Make sure to correct the database URL to use your local database in /src/constants.js before running:
+    
+3) Go to *constants.js* and change the url to your local server.
+
+4) Run the app:
     ```
     $ npm run start
     ```
-3) Go to *constants.js* and change the url to your local server.
 
-4) Test all functionalities:
-- On the nav bar, click on 'Selecteer locatie' to select a location (You can test on the 6th location 'Vitalis Wonen aan de Fakkellaan' first, where we have prepared seed data in the database)
-- Click on 'Gerecht toevoegen' to create a new dish.
-- Click on 'Menu maken', select a specific date, pick dishes from the dropdown and design the menu for the day.
-- Click on the button 'Exporteer menu naar PDF' to export the menu to PDF
+5) Test all functionalities:
+- On the nav bar, click on **Selecteer locatie** to select a location (You can test on the 6th location *Vitalis Wonen aan de Fakkellaan* first, where we have prepared seed data in the database)
+- Click on **Gerecht toevoegen** to create a new dish.
+- Click on **Menu maken**, select a specific date, pick dishes from the dropdown and design the menu for the day.
+- Click on the button **Exporteer menu naar PDF** to export the menu to PDF
 
 # Resources
 - [CHANGELOG.md](https://github.com/Official-Codaisseur-Graduate/lisa-client/blob/development/CHANGELOG.md)
